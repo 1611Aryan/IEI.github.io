@@ -22,38 +22,85 @@
         <img src="IMG/logo.png" alt="Logo">
         <ul>
             <li>
-                <a href="#" class=" active ">Home</a>
+                <a href="#home" class="active" id="nav-element__home">Home</a>
             </li>
             <li>
-                <a href=" # ">Events</a>
+                <a href=" #events " id="nav-element__events">Events</a>
             </li>
             <li>
-                <a href=" # "> Our Team</a>
+                <a href=" # " id="nav-element__team"> Our Team</a>
             </li>
             <li>
-                <a href=" # "> Contact Us</a>
+                <a href=" # " id="nav-element__contact"> Contact Us</a>
             </li>
         </ul>
     </nav>
-    <section class=" home ">
-        <div class="contrast"></div>
-        <div id="hero-container">
-            <img id="hero" src=" img/bluerods.jpg ">
-        </div>
-        <div class="name">
-            <p>IEI</p>
-            <p>THAPAR</p>
-            <p>STUDENT</p>
-            <p>CHAPTER</p>
+
+    <a name="home">
+        <section class=" home ">
+            <div class="contrast"></div>
+            <div id="hero-container">
+                <img id="hero" src=" img/bluerods.jpg ">
+            </div>
+            <div class="name">
+                <p>IEI</p>
+                <p>THAPAR</p>
+                <p>STUDENT</p>
+                <p>CHAPTER</p>
+            </div>
+
+        </section>
+    </a>
+    <section class="home-about">
+        <div class="about">
+            <div class="transitionRight" id="about"></div>
+            <div class="home-about-heading" id="home-about-heading">
+                A Technical Legacy Worth Noting<br>
+                <svg id="home-about-svg" viewBox="0 0 957 12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.501984 5.5498H956.677" stroke-linejoin="round" />
+                </svg>
+
+            </div>
+            <div class="subText">
+                The Institution of Engineers (India) [IEI] is a statutory body to promote and advance the engineering and technology, established in 1920 and incorporated by Royal Charter in 1935. It is the largest multi-disciplinary professional body of engineers encompassing
+                15 (fifteen) engineering disciplines with a membership of more than 820 thousand and serving the nation for more than 9 decades. The IEI has its headquarters located in Kolkata with national presence through more than hundred Centres and
+                several Overseas Chapters, Foras and Organ. IEI (Institution of Engineers India) Thapar Chapter is a technical society of Thapar University which organizes various workshops, technical exams, lecture series by industry experts. This society
+                is open for all technical branches of engineering.
+            </div>
         </div>
 
     </section>
-    <section class="home-about">
-        <div class="subText">
-            IEI aims to mentor young Engineering minds who have a passion for Engineering and wish to hone their technical skills.
+
+
+    <section class="events">
+        <svg viewBox="0 0 764 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M763.658 0.371582C651.549 65.7832 521.145 103.26 381.988 103.26C242.83 103.26 112.426 65.7832 0.317551 0.371582H763.658Z"
+                fill="#4f6475" />
+        </svg>
+        <a name="events"></a>
+        <div class="contrast2"></div>
+        <div class="highlightedText">
+            <h3>Recruiting SuperSoon!</h3><span>Opening for First Year</span>
+        </div>
+        <img src="IMG/avatar.png">
+    </section>
+    </a>
+    <section class="pastEvents">
+        <div class="pastEvents__container">
+            <div class="top-heading"><span>Past Events</span>
+                <div class="nowYouSeeMe"></div>
+            </div>
+            <div class="event-heading">Project Showcase and Motivational Talks</div>
+            <div class="image-carousel">
+                <img id="eventImage" src="IMG/Events/1.jpg">
+                <button id="previous-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </section>
-    <script src="TS/app.js"></script>
+
+    <script src="TS/app.js "></script>
 </body>
 
 </html>

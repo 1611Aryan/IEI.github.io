@@ -8,6 +8,7 @@ body {
     background-color: rgb(79, 100, 117);
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -37,6 +38,7 @@ nav {
     left: 0;
     top: 0;
     background-color: transparent;
+    box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.5);
     .blur {
         position: fixed;
         left: 0;
@@ -53,10 +55,6 @@ nav {
     ul {
         list-style-type: none;
         z-index: 2;
-        .active {
-            color: yellow;
-            transform: translateY(-100%);
-        }
         li {
             font-size: 1.1rem;
             margin-bottom: 2rem;
@@ -110,6 +108,9 @@ nav {
             color: white;
             height: 6rem;
             line-height: 6rem;
+            &:hover {
+                color: rgb(255, 255, 79);
+            }
         }
         p:nth-child(1) {
             transform: skew(60deg, -30deg) scaleY(0.667) translateX(-5rem);
@@ -133,10 +134,203 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    align-items: center;
-    .subText {
-        width: 60%;
-        font-size: 4rem;
+    flex-direction: column;
+    .about {
+        position: relative;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70%;
+        box-shadow: none;
+        //background-color: rgb(70, 87, 102);
+        border-radius: 25px;
+        overflow: hidden;
+        .transitionRight {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 210%;
+            height: 200%;
+            border-radius: 50%;
+            z-index: 9;
+            background-color: rgb(79, 100, 117);
+        }
+    }
+    .home-about-heading {
+        font-size: 3.5rem;
         color: white;
+        font-weight: 800;
+        width: 100%;
+        background-image: url("../IMG/blurText.jpg");
+        background-size: cover;
+        color: black;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        svg {
+            width: 89.5%;
+            stroke: transparent;
+            stroke-width: 0.2rem;
+            height: 0.3rem;
+            -webkit-background-clip: svg;
+            background-image: url("../IMG/blurText.jpg");
+            background-size: cover;
+            margin-bottom: 2rem;
+        }
+    }
+    .subText {
+        text-align: justify;
+        text-justify: inter-word;
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to right, #FAFFD1, #A1FFCE);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.events {
+    position: relative;
+    width: 100vw;
+    height: 150vh;
+    background-color: #245;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .contrast2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 150vh;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    svg {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        transform: translateY(-1%) scale(1.01);
+    }
+    .highlightedText {
+        font-size: 4rem;
+        animation: noir 1s ease infinite alternate-reverse;
+        color: #f1f2f3;
+        font-weight: 800;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span {
+            font-size: 2rem;
+        }
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        filter: brightness(80%);
+    }
+}
+
+.pastEvents {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(20, 41, 51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pastEvents__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 75%;
+        height: 90%;
+        .top-heading,
+        .event-heading {
+            width: 70%;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .top-heading {
+            font-size: 2.2rem;
+            color: rgb(251, 251, 0);
+            display: flex;
+            .nowYouSeeMe {
+                border-left: 0.5rem solid rgb(251, 251, 0);
+            }
+        }
+        .event-heading {
+            margin-bottom: 1rem;
+        }
+        .image-carousel {
+            position: relative;
+            width: 70%;
+            overflow: hidden;
+            img {
+                width: 100%
+            }
+            button {
+                position: absolute;
+                top: 50%;
+                border: none;
+                padding: 0.8rem 1.1rem;
+                background: transparent;
+                transform: translateY(-50%);
+                cursor: pointer;
+                i {
+                    font-size: 3rem;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+                &:focus {
+                    outline: none;
+                }
+                &:nth-of-type(1) {
+                    left: 0.5rem;
+                }
+                &:nth-of-type(2) {
+                    right: 0.5rem;
+                }
+                &:hover {
+                    i {
+                        color: rgba(255, 255, 79, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    color: yellow;
+    transform: translate(20%, -50%);
+}
+
+.revealio {
+    animation: revealio 3s ease-out forwards
+}
+
+@keyframes revealio {
+    to {
+        transform: translate(200%, 200%);
+    }
+}
+
+@keyframes noir {
+    to {
+        filter: invert(15%);
+        transform: scale(1.01);
     }
 }
