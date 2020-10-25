@@ -69,6 +69,9 @@ window.addEventListener('scroll', () => {
         navEvent.classList.add('active');
         navTeam.classList.remove('active');
         navContact.classList.remove('active');
+        if (pageYOffset >= 2.9 * pageHeight) {
+            document.querySelector('.nowYouSeeMe').classList.add('alohomora');
+        }
     }
 });
 let i = 1;
@@ -100,7 +103,8 @@ nextBtn.addEventListener('click', () => {
         eventImage.src = imgArray[i];
         j++;
     }
-    else
+    else {
         eventImage.src = imgArray[i];
-    j++;
+        j++;
+    }
 });

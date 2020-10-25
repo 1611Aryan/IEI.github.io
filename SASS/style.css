@@ -324,6 +324,7 @@ nav ul li a {
 }
 
 .pastEvents {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #142933;
@@ -336,6 +337,20 @@ nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.pastEvents .road-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pastEvents .road-image img {
+  width: 100%;
+  opacity: 0.05;
+  height: 100%;
 }
 
 .pastEvents .pastEvents__container {
@@ -373,7 +388,13 @@ nav ul li a {
 }
 
 .pastEvents .pastEvents__container .top-heading .nowYouSeeMe {
+  margin-left: 0.5rem;
   border-left: 0.5rem solid #fbfb00;
+  width: 60%;
+  height: 100%;
+  background: #132731;
+  -webkit-transform: translateX(-41%);
+          transform: translateX(-41%);
 }
 
 .pastEvents .pastEvents__container .event-heading {
@@ -436,6 +457,11 @@ nav ul li a {
           animation: revealio 3s ease-out forwards;
 }
 
+.alohomora {
+  -webkit-animation: alohomora 1s ease-in-out forwards;
+          animation: alohomora 1s ease-in-out forwards;
+}
+
 @-webkit-keyframes revealio {
   to {
     -webkit-transform: translate(200%, 200%);
@@ -465,6 +491,20 @@ nav ul li a {
             filter: invert(15%);
     -webkit-transform: scale(1.01);
             transform: scale(1.01);
+  }
+}
+
+@-webkit-keyframes alohomora {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes alohomora {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 /*# sourceMappingURL=style.css.map */
