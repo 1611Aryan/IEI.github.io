@@ -1,17 +1,21 @@
 const hero = document.getElementById('hero');
 const home = document.querySelector('.home');
+const homeId = document.getElementById('home');
 const headClipImg = document.getElementById('home-about-heading');
 const headClipSVG = document.getElementById('home-about-svg');
 const about = document.getElementById('about');
+const about_parent = document.getElementById('about_parent');
+const cursor_circle = document.getElementById('cursor_circle');
 const pageHeight = window.innerHeight;
 const navHome = document.getElementById('nav-element__home');
 const navEvent = document.getElementById('nav-element__events');
 const navTeam = document.getElementById('nav-element__team');
 const navContact = document.getElementById('nav-element__contact');
-const prevBtn = document.getElementById('previous-btn');
-const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('previous_btn');
+const nextBtn = document.getElementById('next_btn');
 const eventImage = document.getElementById('eventImage');
-const imgArray = ['IMG/Events/1.jpg',
+const imgArray = [
+    'IMG/Events/1.jpg',
     'IMG/Events/2.jpg',
     'IMG/Events/3.jpg',
     'IMG/Events/4.jpg',
@@ -21,10 +25,10 @@ const imgArray = ['IMG/Events/1.jpg',
     'IMG/Events/8.jpg',
 ];
 //?hero image transition
-home.addEventListener('mousemove', (e) => {
+homeId.addEventListener('mousemove', (e) => {
     let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    hero.style.transition = 'none';
+    hero.style.transition = 'all 0.15s ease';
     hero.style.transform = 'translateX(' + xAxis + 'px) translateY(' + yAxis + 'px)';
 });
 //?reset upon leaving
@@ -52,6 +56,19 @@ headClipImg.addEventListener('mouseleave', () => {
     headClipSVG.style.backgroundPositionX = '0px';
     headClipSVG.style.backgroundPositionY = '0px';
 });
+//?The bubble appears when mouse is moved over About section
+about_parent.addEventListener('mousemove', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY - window.innerHeight;
+    cursor_circle.style.transition = "all 0.1s";
+    cursor_circle.style.clipPath = "circle(10% at " + xAxis + "px " + yAxis + "px)";
+});
+about_parent.addEventListener('mouseleave', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY - window.innerHeight;
+    cursor_circle.style.transition = "all 0.5s";
+    cursor_circle.style.clipPath = "circle(0% at " + xAxis + "px " + yAxis + "px)";
+});
 //?Nav elements change position and color  when different section of pages are scrolled to
 window.addEventListener('scroll', () => {
     if (pageYOffset < 1.7 * pageHeight) {
@@ -74,37 +91,76 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+//?Counters Don't Mess
 let i = 1;
 let j = 0;
-prevBtn.addEventListener('click', () => {
-    i--;
-    if (j == 0) {
-        i = 7;
-        j++;
-        eventImage.src = imgArray[i];
-    }
-    else if (i < 0) {
-        i = 7;
-        eventImage.src = imgArray[i];
-    }
-    else {
-        eventImage.src = imgArray[i];
-    }
-});
-nextBtn.addEventListener('click', () => {
-    i++;
-    if (j == 0) {
-        i = 1;
-        eventImage.src = imgArray[i];
-        j++;
-    }
-    else if (i > 7) {
-        i = 0;
-        eventImage.src = imgArray[i];
-        j++;
-    }
-    else {
-        eventImage.src = imgArray[i];
-        j++;
-    }
-});
+//?Checks if prev button is not empty then adds the event listener of click
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        i--;
+        if (j == 0) {
+            i = 7;
+            j++;
+            eventImage.src = imgArray[i];
+        }
+        else if (i < 0) {
+            i = 7;
+            eventImage.src = imgArray[i];
+        }
+        else {
+            eventImage.src = imgArray[i];
+        }
+    });
+    prevBtn.addEventListener('touch', () => {
+        i--;
+        if (j == 0) {
+            i = 7;
+            j++;
+            eventImage.src = imgArray[i];
+        }
+        else if (i < 0) {
+            i = 7;
+            eventImage.src = imgArray[i];
+        }
+        else {
+            eventImage.src = imgArray[i];
+        }
+    });
+}
+//?Checks if next button is not empty then adds the event listener of click
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        i++;
+        if (j == 0) {
+            i = 1;
+            eventImage.src = imgArray[i];
+            j++;
+        }
+        else if (i > 7) {
+            i = 0;
+            eventImage.src = imgArray[i];
+            j++;
+        }
+        else {
+            eventImage.src = imgArray[i];
+            j++;
+        }
+    });
+    nextBtn.addEventListener('touch', () => {
+        i++;
+        if (j == 0) {
+            i = 1;
+            eventImage.src = imgArray[i];
+            j++;
+        }
+        else if (i > 7) {
+            i = 0;
+            eventImage.src = imgArray[i];
+            j++;
+        }
+        else {
+            eventImage.src = imgArray[i];
+            j++;
+        }
+    });
+}

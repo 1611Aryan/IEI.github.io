@@ -12,13 +12,14 @@
     <!--?Stylesheet-->
     <link type="text/css" rel="stylesheet" href="SASS/style.css">
     <!--?Script-->
-    <script defer src="TS/app.js"></script>
+
+
 </head>
 
 <body>
 
     <nav>
-        <div class="blur"></div>
+
         <img src="IMG/logo.png" alt="Logo">
         <ul>
             <li>
@@ -35,9 +36,9 @@
             </li>
         </ul>
     </nav>
-
+    <!--! For phone design change the hero image to parallax -->
     <a name="home">
-        <section class=" home ">
+        <section class=" home " id="home">
             <div class="contrast"></div>
             <div id="hero-container">
                 <img id="hero" src=" img/bluerods.jpg ">
@@ -51,17 +52,17 @@
 
         </section>
     </a>
-    <section class="home-about">
-        <div class="about">
+    <section class="home-about" id="about_parent">
+        <div id="cursor_circle"></div>
+        <div class="about lax" data-lax-preset="driftLeft-100">
             <div class="transitionRight" id="about"></div>
-            <div class="home-about-heading" id="home-about-heading">
-                A Technical Legacy Worth Noting<br>
-                <svg id="home-about-svg" viewBox="0 0 957 12" xmlns="http://www.w3.org/2000/svg">
+            <div class="home-about-heading " id="home-about-heading">
+                A Technical Legacy Worth Noting
+                <svg id="home-about-svg" viewbox="0 0 957 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.501984 5.5498H956.677" stroke-linejoin="round" />
                 </svg>
-
             </div>
-            <div class="subText">
+            <div class="subText ">
                 The Institution of Engineers (India) [IEI] is a statutory body to promote and advance the engineering and technology, established in 1920 and incorporated by Royal Charter in 1935. It is the largest multi-disciplinary professional body of engineers encompassing
                 15 (fifteen) engineering disciplines with a membership of more than 820 thousand and serving the nation for more than 9 decades. The IEI has its headquarters located in Kolkata with national presence through more than hundred Centres and
                 several Overseas Chapters, Foras and Organ. IEI (Institution of Engineers India) Thapar Chapter is a technical society of Thapar University which organizes various workshops, technical exams, lecture series by industry experts. This society
@@ -73,7 +74,7 @@
 
     <a name="events">
         <section class="events">
-            <svg viewBox="0 0 764 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewbox="0 0 764 104" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M763.658 0.371582C651.549 65.7832 521.145 103.26 381.988 103.26C242.83 103.26 112.426 65.7832 0.317551 0.371582H763.658Z"
                     fill="#4f6475" />
@@ -93,16 +94,95 @@
             <div class="top-heading"><span>Past Events</span>
                 <div class="nowYouSeeMe"></div>
             </div>
-            <div class="event-heading">Project Showcase and Motivational Talks</div>
-            <div class="image-carousel">
-                <img id="eventImage" src="IMG/Events/1.jpg">
-                <button id="previous-btn"><i class="fas fa-chevron-left"></i></button>
-                <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class=" event-heading ">Project Showcase and Motivational Talks</div>
+            <div class="image-carousel ">
+                <img id="eventImage" src="IMG/Events/1.jpg ">
+                <button id="previous_btn">
+                    <i class="fas fa-chevron-left "></i>
+                </button>
+                <button id="next_btn">
+                    <i class="fas fa-chevron-right "></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <script src="TS/app.js "></script>
+    <a name="team">
+        <section class="team">
+            <h1><span>O</span><span>U</span><span>R</span> <span>T</span><span>E</span><span>A</span><span>M</span></h1>
+            <div class="card_container">
+                <div class="container">
+                    <div class="card">
+                        <div class="image-container">
+                            <img class="image" src="IMG/Team/potter.jpg">
+                        </div>
+                        <div class="name">
+                            Harry Potter
+                        </div>
+                        <div class="card-info">
+                            <div class="designatory">
+                                Auror
+                            </div>
+                            <div class="description">
+                                The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="image-container">
+                            <img class="image" src="IMG/Team/weasley.jpg">
+                        </div>
+                        <div class="name">
+                            Ron Weasley
+                        </div>
+                        <div class="card-info">
+                            <div class="designatory">
+                                Auror
+                            </div>
+                            <div class="description">
+                                The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="image-container">
+                            <img class="image" src="IMG/Team/hermione.jpg">
+                        </div>
+                        <div class="name">
+                            Hermione Granger
+                        </div>
+                        <div class="card-info">
+                            <div class="designatory">
+                                Minister of Magic
+                            </div>
+                            <div class="description">
+                                The brightest witch of her age. The founder of S.P.E.W
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script>
+        window.onload = function() {
+            lax.setup() // init
+
+            const updateLax = () => {
+                lax.update(window.scrollY)
+                window.requestAnimationFrame(updateLax)
+            }
+
+            window.requestAnimationFrame(updateLax)
+        }
+    </script>
+    <script src="TS/app.js"></script>
 </body>
 
 </html>
