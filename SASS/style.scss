@@ -11,7 +11,6 @@ body {
     overflow-x: hidden;
     user-select: none;
     height: 550vh;
-    width: 100vw;
     cursor: none;
 }
 
@@ -173,6 +172,7 @@ nav {
     align-items: center;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
     cursor: none;
     #cursor_circle {
         position: absolute;
@@ -196,7 +196,6 @@ nav {
         width: 70%;
         box-shadow: none;
         border-radius: 25px;
-        overflow: hidden;
         z-index: 2;
         .transitionRight {
             position: absolute;
@@ -505,7 +504,7 @@ nav {
                     left: 10px;
                     text-align: center;
                     font-weight: 500;
-                    font-size: 2rem;
+                    font-size: clamp(1rem, 3vw, 2rem);
                     color: white;
                     transition: color 0.3s;
                     &:hover {

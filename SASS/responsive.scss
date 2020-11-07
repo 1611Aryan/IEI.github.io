@@ -1,6 +1,6 @@
 @media (max-width:765px) {
-    html {
-        width: 100vw;
+    body {
+        max-width: 100vw;
     }
     .home {
         #hero-container {
@@ -32,6 +32,7 @@
         }
     }
     .events {
+        overflow: hidden !important;
         img {
             transform: scale(1.5);
         }
