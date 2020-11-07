@@ -61,6 +61,14 @@ nav {
     }
 }
 
+.active {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    color: yellow;
+    transform: translate(20%, -50%);
+}
+
 .home {
     width: 100vw;
     height: 100vh;
@@ -167,7 +175,6 @@ nav {
         flex-direction: column;
         width: 70%;
         box-shadow: none;
-        //background-color: rgb(70, 87, 102);
         border-radius: 25px;
         overflow: hidden;
         z-index: 2;
@@ -220,6 +227,19 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 1;
+    cursor: none;
+    #cursor_circle_events {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(226, 226, 226, 0.486);
+        clip-path: circle(0%);
+        z-index: -1;
+        transition: all 0.1s;
+    }
     .contrast2 {
         position: absolute;
         top: 0;
@@ -227,10 +247,11 @@ nav {
         width: 100vw;
         height: 150vh;
         background-color: rgba(0, 0, 0, 0.4);
+        z-index: -99;
     }
     svg {
         position: absolute;
-        z-index: 2;
+        z-index: -2;
         top: 0;
         left: 0;
         width: 100vw;
@@ -241,7 +262,7 @@ nav {
         animation: noir 1s ease infinite alternate-reverse;
         color: #f1f2f3;
         font-weight: 800;
-        z-index: 2;
+        z-index: 3;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -256,6 +277,13 @@ nav {
         left: 0;
         width: 100%;
         filter: brightness(80%);
+        z-index: 2;
+    }
+}
+
+@keyframes noir {
+    to {
+        filter: invert(15%);
     }
 }
 
@@ -348,14 +376,6 @@ nav {
     }
 }
 
-.active {
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    color: yellow;
-    transform: translate(20%, -50%);
-}
-
 .revealio {
     animation: revealio 3s ease-out forwards
 }
@@ -367,13 +387,6 @@ nav {
 @keyframes revealio {
     to {
         transform: translate(200%, 200%);
-    }
-}
-
-@keyframes noir {
-    to {
-        filter: invert(15%);
-        transform: scale(1.01);
     }
 }
 
@@ -389,12 +402,12 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     h1 {
         font-size: 3.5rem;
         margin-top: 2rem;
-        color: white;
+        color: #1A2C32;
         span {
             display: inline-block;
             transition: all 0.7s;
@@ -410,7 +423,21 @@ nav {
         width: 90%;
         height: 100%;
         border-radius: 25px 25px 0 0;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(0, 0, 0, 0.4);
+        position: relative;
+        .team_image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../IMG/team1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            border-radius: 25px 25px 0 0;
+            filter: blur(10px);
+        }
         .container {
             height: 70%;
             width: 27.5%;
@@ -418,7 +445,7 @@ nav {
             border-radius: 25px;
             position: relative;
             //clip-path: circle(18.5% at 49.75% 26.5%);
-            clip-path: circle(18% at center);
+            clip-path: circle(22% at center);
             transition: all 0.7s ease;
             .card {
                 width: 100%;
@@ -433,7 +460,7 @@ nav {
                     align-items: center;
                     flex-direction: column;
                     img {
-                        width: 45%;
+                        width: 50%;
                         border-radius: 50%;
                     }
                 }
@@ -444,7 +471,11 @@ nav {
                     text-align: center;
                     font-weight: 500;
                     font-size: 2rem;
-                    color: white
+                    color: white;
+                    transition: color 0.3s;
+                    &:hover {
+                        color: yellow;
+                    }
                 }
                 .card-info {
                     position: absolute;
@@ -457,15 +488,63 @@ nav {
                     color: white;
                     .designatory {
                         font-size: 1.5rem;
+                        transition: color 0.3s;
+                        &:hover {
+                            color: yellow;
+                        }
                     }
                     .description {
                         font-size: 1rem;
+                        transition: color 0.3s;
+                        &:hover {
+                            color: yellow;
+                        }
                     }
                 }
             }
             &:hover {
                 clip-path: circle(70%);
-                background: linear-gradient(to right, #f7b733, #fc4a1a);
+                background: #3a7bd5;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #3a6073, #3a7bd5);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+        }
+        .card_control {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translate(-50%);
+            input[type=radio] {
+                margin: 0 10px;
+            }
+            input[type='radio']:after {
+                width: 15px;
+                height: 15px;
+                border-radius: 15px;
+                top: -2px;
+                left: -1px;
+                position: relative;
+                background-color: #d1d3d1;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 1px solid white;
+            }
+            input[type='radio']:checked:after {
+                width: 15px;
+                height: 15px;
+                border-radius: 15px;
+                top: -2px;
+                left: -1px;
+                position: relative;
+                background-color: yellow;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 1px solid white;
             }
         }
     }

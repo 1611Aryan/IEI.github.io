@@ -29,7 +29,7 @@
                 <a href=" #events " id="nav-element__events">Events</a>
             </li>
             <li>
-                <a href=" # " id="nav-element__team"> Our Team</a>
+                <a href=" #team " id="nav-element__team"> Our Team</a>
             </li>
             <li>
                 <a href=" # " id="nav-element__contact"> Contact Us</a>
@@ -54,7 +54,7 @@
     </a>
     <section class="home-about" id="about_parent">
         <div id="cursor_circle"></div>
-        <div class="about lax" data-lax-preset="driftLeft-100">
+        <div class="about lax" data-lax-preset="driftLeft-200">
             <div class="transitionRight" id="about"></div>
             <div class="home-about-heading " id="home-about-heading">
                 A Technical Legacy Worth Noting
@@ -72,21 +72,23 @@
 
     </section>
 
-    <a name="events">
-        <section class="events">
-            <svg viewbox="0 0 764 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M763.658 0.371582C651.549 65.7832 521.145 103.26 381.988 103.26C242.83 103.26 112.426 65.7832 0.317551 0.371582H763.658Z"
-                    fill="#4f6475" />
-            </svg>
 
+    <section class="events" id="events">
+        <div id="cursor_circle_events"></div>
+        <svg viewbox="0 0 764 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M763.658 0.371582C651.549 65.7832 521.145 103.26 381.988 103.26C242.83 103.26 112.426 65.7832 0.317551 0.371582H763.658Z"
+                fill="#4f6475" />
+        </svg>
+        <a name="events">
             <div class="contrast2"></div>
-            <div class="highlightedText">
+            <div class="highlightedText lax" data-lax-preset="zoomInOut-0.4">
                 <h3>Recruiting SuperSoon!</h3><span>Opening for First Year</span>
             </div>
             <img src="IMG/avatar.png">
-        </section>
-    </a>
+        </a>
+    </section>
+
 
     <section class="pastEvents">
         <div class="road-image"><img src="IMG/nightRoad.jpg"></div>
@@ -109,21 +111,23 @@
 
     <a name="team">
         <section class="team">
+
             <h1><span>O</span><span>U</span><span>R</span> <span>T</span><span>E</span><span>A</span><span>M</span></h1>
             <div class="card_container">
+                <div class="team_image"></div>
                 <div class="container">
                     <div class="card">
                         <div class="image-container">
-                            <img class="image" src="IMG/Team/potter.jpg">
+                            <img class="image" src="IMG/Team/potter.jpg" id="card_image_one">
                         </div>
-                        <div class="name">
+                        <div class="name" id="name_card_one">
                             Harry Potter
                         </div>
                         <div class="card-info">
-                            <div class="designatory">
+                            <div class="designatory" id="card_designation_one">
                                 Auror
                             </div>
-                            <div class="description">
+                            <div class="description" id="card_about_one">
                                 The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
                             </div>
                         </div>
@@ -132,16 +136,16 @@
                 <div class="container">
                     <div class="card">
                         <div class="image-container">
-                            <img class="image" src="IMG/Team/weasley.jpg">
+                            <img class="image" src="IMG/Team/weasley.jpg" id="card_image_two">
                         </div>
-                        <div class="name">
+                        <div class="name" id="name_card_two">
                             Ron Weasley
                         </div>
                         <div class="card-info">
-                            <div class="designatory">
+                            <div class="designatory" id="card_designation_two">
                                 Auror
                             </div>
-                            <div class="description">
+                            <div class="description" id="card_about_two">
                                 The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
                             </div>
                         </div>
@@ -150,30 +154,37 @@
                 <div class="container">
                     <div class="card">
                         <div class="image-container">
-                            <img class="image" src="IMG/Team/hermione.jpg">
+                            <img class="image" src="IMG/Team/hermione.jpg" id="card_image_three">
                         </div>
-                        <div class="name">
+                        <div class="name" id="name_card_three">
                             Hermione Granger
                         </div>
                         <div class="card-info">
-                            <div class="designatory">
+                            <div class="designatory" id="card_designation_three">
                                 Minister of Magic
                             </div>
-                            <div class="description">
+                            <div class="description" id="card_about_three">
                                 The brightest witch of her age. The founder of S.P.E.W
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <div class="card_control" id="card_control">
+                    <!--?Giving the same name to the radios enables only one to be seleced at a time-->
+                    <input type="radio" id="card_list_one" name="us">
+                    <input type="radio" id="card_list_two" name="us">
+                    <input type="radio" id="card_list_three" name="us">
+                </div>
             </div>
+
         </section>
     </a>
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <script>
         window.onload = function() {
             lax.setup() // init
-
+            radio1.checked = true;
+            render_card[0];
             const updateLax = () => {
                 lax.update(window.scrollY)
                 window.requestAnimationFrame(updateLax)
