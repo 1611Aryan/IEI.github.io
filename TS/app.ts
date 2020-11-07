@@ -61,38 +61,83 @@ headClipImg.addEventListener('mouseleave', () => {
     headClipSVG.style.backgroundPositionY = '0px';
 });
 
+
+
+//?The bubble appears when mouse is moved over About home
+homeId.addEventListener('mousemove', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY;
+    document.getElementById('cursor_circle_home').style.transition = "all 0.1s";
+    document.getElementById('cursor_circle_home').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    console.log(xAxis, yAxis);
+});
+homeId.addEventListener('mouseleave', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY;
+    document.getElementById('cursor_circle_home').style.transition = "all 0.5s";
+    document.getElementById('cursor_circle_home').style.clipPath = "circle(0% at  center)";
+});
+//?
+
 //?The bubble appears when mouse is moved over About section
-
-
 about_parent.addEventListener('mousemove', e => {
     let xAxis = e.pageX;
     let yAxis = e.pageY - window.innerHeight;
     cursor_circle.style.transition = "all 0.1s";
-    cursor_circle.style.clipPath = "circle(10% at " + xAxis + "px " + yAxis + "px)";
+    cursor_circle.style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
 });
 
 about_parent.addEventListener('mouseleave', e => {
     let xAxis = e.pageX;
     let yAxis = e.pageY - window.innerHeight;
     cursor_circle.style.transition = "all 0.5s";
-    cursor_circle.style.clipPath = "circle(0% at " + xAxis + "px " + yAxis + "px)";
-
+    cursor_circle.style.clipPath = "circle(0% at center)";
 });
+
 //?The bubble appears when mouse is moved over events section
 document.getElementById('events').addEventListener('mousemove', e => {
     let xAxis = e.pageX;
     let yAxis = e.pageY - window.innerHeight * 2.;
     document.getElementById('cursor_circle_events').style.transition = "all 0.1s";
     document.getElementById('cursor_circle_events').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
-    console.log(yAxis);
 });
 
 document.getElementById('events').addEventListener('mouseleave', e => {
     let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight;
+    let yAxis = e.pageY - window.innerHeight * 2;
     document.getElementById('cursor_circle_events').style.transition = "all 0.5s";
-    document.getElementById('cursor_circle_events').style.clipPath = "circle(0% at " + xAxis + "px " + yAxis + "px)";
+    document.getElementById('cursor_circle_events').style.clipPath = "circle(0% at center)";
 });
+
+//?The bubble appears when mouse is moved over past events section
+document.getElementById('pastEvents').addEventListener('mousemove', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY - window.innerHeight * 3.5;
+    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    console.log(xAxis, yAxis);
+});
+document.getElementById('pastEvents').addEventListener('mouseleave', e => {
+    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.5s";
+    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(0% at  center)";
+});
+
+document.getElementById('cursor_image_carousel').addEventListener('mouseenter', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY - window.innerHeight * 3.5;
+    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    console.log(xAxis, yAxis);
+});
+
+document.getElementById('cursor_image_carousel').addEventListener('mousemove', e => {
+    let xAxis = e.pageX;
+    let yAxis = e.pageY - window.innerHeight * 3.5;
+    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    console.log(xAxis, yAxis);
+});
+//?
 
 //?Nav elements change position and color  when different section of pages are scrolled to
 window.addEventListener('scroll', () => {
@@ -102,7 +147,6 @@ window.addEventListener('scroll', () => {
         navTeam.classList.remove('active');
         navTeam.style.marginRight = '0px';
         navContact.classList.remove('active');
-
         if (pageYOffset > 0.45 * pageHeight) {
             //?About us Animation loads when certain scroll position is reached
             about.classList.add('revealio');

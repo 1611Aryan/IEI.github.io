@@ -14,6 +14,9 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  height: 550vh;
+  width: 100vw;
+  cursor: none;
 }
 
 ::-webkit-scrollbar {
@@ -56,12 +59,13 @@ nav {
           box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
+  cursor: pointer;
 }
 
 nav img {
   z-index: 2;
   margin-top: 2rem;
-  width: 80%;
+  width: 98%;
 }
 
 nav ul {
@@ -70,7 +74,7 @@ nav ul {
 }
 
 nav ul li {
-  font-size: 1.1rem;
+  font-size: clamp(0.7rem, 3vw, 1.1rem);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -104,11 +108,24 @@ nav ul li a {
           align-items: center;
   -webkit-perspective: 100px;
           perspective: 100px;
+  position: relative;
+}
+
+.home #cursor_circle_home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 79, 0.6);
+  z-index: 4;
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
 }
 
 .home .contrast {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
@@ -123,26 +140,32 @@ nav ul li a {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 2;
+}
+
+.home #hero-container .img {
+  display: none;
 }
 
 .home #hero-container img {
+  display: block;
   position: absolute;
   top: -50vh;
   left: -50vw;
-  width: 200vw;
-  height: 200vh;
+  width: 200%;
+  height: 200%;
 }
 
 .home .name {
-  font-size: 6rem;
+  font-size: clamp(4rem, 3vw, 6rem);
   font-weight: 900;
-  z-index: 3;
+  z-index: 5;
 }
 
 .home .name p {
   color: white;
-  height: 6rem;
-  line-height: 6rem;
+  height: clamp(4rem, 3vw, 6rem);
+  line-height: clamp(4rem, 3vw, 6rem);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -212,7 +235,7 @@ nav ul li a {
 }
 
 .home-about {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #4f6475;
   display: -webkit-box;
@@ -284,7 +307,7 @@ nav ul li a {
 }
 
 .home-about .home-about-heading {
-  font-size: 3.5rem;
+  font-size: clamp(1.6rem, 3vw, 3.5rem);
   color: white;
   font-weight: 800;
   width: 100%;
@@ -301,7 +324,7 @@ nav ul li a {
   text-align: justify;
   text-justify: inter-word;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: clamp(0.8rem, 3vw, 1.4rem);
   font-weight: 600;
   color: white;
   z-index: 2;
@@ -378,7 +401,7 @@ nav ul li a {
 }
 
 .events .highlightedText {
-  font-size: 4rem;
+  font-size: clamp(2.75rem, 3vw, 5rem);
   animation: noir 1s ease infinite alternate-reverse;
   color: #f1f2f3;
   font-weight: 800;
@@ -386,6 +409,7 @@ nav ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -399,7 +423,7 @@ nav ul li a {
 }
 
 .events .highlightedText span {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
 .events img {
@@ -409,7 +433,7 @@ nav ul li a {
   width: 100%;
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
-  z-index: 2;
+  z-index: -2;
 }
 
 @-webkit-keyframes noir {
@@ -440,6 +464,18 @@ nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.pastEvents #cursor_circle_pastevents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 166, 0, 0.411);
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+  z-index: 5;
 }
 
 .pastEvents .road-image {
@@ -477,17 +513,19 @@ nav ul li a {
 .pastEvents .pastEvents__container .top-heading,
 .pastEvents .pastEvents__container .event-heading {
   width: 70%;
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 2rem);
   color: white;
   margin-bottom: 1rem;
+  z-index: 6;
 }
 
 .pastEvents .pastEvents__container .top-heading {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: #fbfb00;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 3;
 }
 
 .pastEvents .pastEvents__container .top-heading .nowYouSeeMe {
@@ -508,6 +546,8 @@ nav ul li a {
   position: relative;
   width: 70%;
   overflow: hidden;
+  z-index: 6;
+  cursor: default;
 }
 
 .pastEvents .pastEvents__container .image-carousel img {
@@ -526,7 +566,7 @@ nav ul li a {
 }
 
 .pastEvents .pastEvents__container .image-carousel button i {
-  font-size: 3rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   color: rgba(255, 255, 255, 0.5);
 }
 

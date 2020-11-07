@@ -11,13 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--?Stylesheet-->
     <link type="text/css" rel="stylesheet" href="SASS/style.css">
-    <!--?Script-->
-
-
+    <link type="text/css" rel="stylesheet" href="SASS/responsive.css">
 </head>
 
 <body>
-
     <nav>
 
         <img src="IMG/logo.png" alt="Logo">
@@ -38,9 +35,11 @@
     </nav>
     <!--! For phone design change the hero image to parallax -->
     <a name="home">
-        <section class=" home " id="home">
+        <section class="home" id="home">
+            <div id="cursor_circle_home"></div>
             <div class="contrast"></div>
             <div id="hero-container">
+                <div class="img"></div>
                 <img id="hero" src=" img/bluerods.jpg ">
             </div>
             <div class="name">
@@ -90,14 +89,15 @@
     </section>
 
 
-    <section class="pastEvents">
+    <section class="pastEvents" id="pastEvents">
+        <div id="cursor_circle_pastevents"></div>
         <div class="road-image"><img src="IMG/nightRoad.jpg"></div>
         <div class="pastEvents__container">
             <div class="top-heading"><span>Past Events</span>
                 <div class="nowYouSeeMe"></div>
             </div>
             <div class=" event-heading ">Project Showcase and Motivational Talks</div>
-            <div class="image-carousel ">
+            <div class="image-carousel " id="cursor_image_carousel">
                 <img id="eventImage" src="IMG/Events/1.jpg ">
                 <button id="previous_btn">
                     <i class="fas fa-chevron-left "></i>

@@ -1,0 +1,61 @@
+@media (max-width: 765px) {
+  .home #hero-container .img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url("../IMG/bluerods.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .home #hero-container img {
+    display: none;
+    position: absolute;
+    top: -50vh;
+    left: -50vw;
+    width: 200%;
+    height: 200%;
+  }
+  .home-about .about {
+    width: 85%;
+  }
+  .events img {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  .pastEvents .pastEvents__container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 90%;
+    height: 95%;
+  }
+  .pastEvents .pastEvents__container .top-heading,
+  .pastEvents .pastEvents__container .event-heading {
+    width: 85%;
+  }
+  .pastEvents .pastEvents__container .top-heading .nowYouSeeMe {
+    margin-left: 0.5rem;
+    border-left: 0.5rem solid #fbfb00;
+    width: 60%;
+    height: 100%;
+    background: #132731;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .pastEvents .pastEvents__container .image-carousel {
+    width: 85%;
+  }
+  .pastEvents .pastEvents__container .image-carousel button:focus {
+    outline: none;
+  }
+  .pastEvents .pastEvents__container .image-carousel button:nth-of-type(1) {
+    left: 0.1rem;
+  }
+  .pastEvents .pastEvents__container .image-carousel button:nth-of-type(2) {
+    right: 0.1rem;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

@@ -1,0 +1,71 @@
+@media (max-width:765px) {
+    .home {
+        #hero-container {
+            .img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 200%;
+                background: url('../IMG/bluerods.jpg');
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            img {
+                display: none;
+                position: absolute;
+                top: -50vh;
+                left: -50vw;
+                width: 200%;
+                height: 200%;
+            }
+        }
+    }
+    .home-about {
+        .about {
+            width: 85%;
+        }
+    }
+    .events {
+        img {
+            transform: scale(1.5);
+        }
+    }
+    .pastEvents {
+        .pastEvents__container {
+            justify-content: space-around;
+            width: 90%;
+            height: 95%;
+            .top-heading,
+            .event-heading {
+                width: 85%;
+            }
+            .top-heading {
+                .nowYouSeeMe {
+                    margin-left: 0.5rem;
+                    border-left: 0.5rem solid rgb(251, 251, 0);
+                    width: 60%;
+                    height: 100%;
+                    background: rgb(19, 39, 49);
+                    transform: translateX(-100%);
+                }
+            }
+            .image-carousel {
+                width: 85%;
+                button {
+                    &:focus {
+                        outline: none;
+                    }
+                    &:nth-of-type(1) {
+                        left: 0.1rem;
+                    }
+                    &:nth-of-type(2) {
+                        right: 0.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
