@@ -363,6 +363,7 @@ nav ul li a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
+  overflow: hidden;
   cursor: none;
 }
 
