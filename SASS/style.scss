@@ -332,9 +332,15 @@ nav {
         left: 0;
         width: 100vw;
         height: 100vh;
+        background: url(../IMG/nightRoad.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.05;
         img {
             width: 100%;
-            opacity: 0.05;
+            opacity: 0.1;
             height: 100%;
         }
     }
