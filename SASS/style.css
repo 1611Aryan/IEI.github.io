@@ -513,7 +513,7 @@ nav ul li a {
 .pastEvents .pastEvents__container .top-heading,
 .pastEvents .pastEvents__container .event-heading {
   width: 70%;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1.3rem, 3vw, 2rem);
   color: white;
   margin-bottom: 1rem;
   z-index: 6;

@@ -53,7 +53,7 @@
     </a>
     <section class="home-about" id="about_parent">
         <div id="cursor_circle"></div>
-        <div class="about lax" data-lax-preset="driftLeft-200">
+        <div class="about lax" data-lax-preset_large="driftLeft-200" data-lax-preset_small="driftLeft-50">
             <div class="transitionRight" id="about"></div>
             <div class="home-about-heading " id="home-about-heading">
                 A Technical Legacy Worth Noting
@@ -81,7 +81,7 @@
         </svg>
         <a name="events">
             <div class="contrast2"></div>
-            <div class="highlightedText lax" data-lax-preset="zoomInOut-0.4">
+            <div class="highlightedText lax" data-lax-preset_large="zoomInOut-0.4" data-lax-preset_small="zoomInOut-0.3">
                 <h3>Recruiting SuperSoon!</h3><span>Opening for First Year</span>
             </div>
             <img src="IMG/avatar.png">
@@ -182,7 +182,12 @@
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <script>
         window.onload = function() {
-            lax.setup() // init
+            lax.setup({
+                    breakpoints: {
+                        small: 0,
+                        large: 765
+                    }
+                }) // init
             radio1.checked = true;
             render_card[0];
             const updateLax = () => {
