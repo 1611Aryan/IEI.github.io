@@ -644,7 +644,7 @@ nav ul li a {
 }
 
 .team h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
   margin-top: 2rem;
   color: #1A2C32;
 }
@@ -750,7 +750,7 @@ nav ul li a {
   left: 10px;
   text-align: center;
   font-weight: 500;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(0.8rem, 3vw, 2rem);
   color: white;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -767,13 +767,11 @@ nav ul li a {
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   width: 80%;
-  font-size: 2rem;
-  font-family: poppins;
   color: white;
 }
 
 .team .card_container .container .card .card-info .designatory {
-  font-size: 1.5rem;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -783,7 +781,7 @@ nav ul li a {
 }
 
 .team .card_container .container .card .card-info .description {
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 3vw, 1rem);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -795,12 +793,8 @@ nav ul li a {
 .team .card_container .container:hover {
   -webkit-clip-path: circle(70%);
           clip-path: circle(70%);
-  background: #3a7bd5;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-gradient(linear, left top, right top, from(#3a6073), to(#3a7bd5));
   background: linear-gradient(to right, #3a6073, #3a7bd5);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .team .card_container .card_control {

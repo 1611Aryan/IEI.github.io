@@ -439,7 +439,7 @@ nav {
     justify-content: flex-start;
     flex-direction: column;
     h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2.5rem, 3vw, 3.5rem);
         margin-top: 2rem;
         color: #1A2C32;
         span {
@@ -504,7 +504,7 @@ nav {
                     left: 10px;
                     text-align: center;
                     font-weight: 500;
-                    font-size: clamp(1rem, 3vw, 2rem);
+                    font-size: clamp(0.8rem, 3vw, 2rem);
                     color: white;
                     transition: color 0.3s;
                     &:hover {
@@ -517,18 +517,16 @@ nav {
                     top: 70%;
                     transform: translate(-50%);
                     width: 80%;
-                    font-size: 2rem;
-                    font-family: poppins;
                     color: white;
                     .designatory {
-                        font-size: 1.5rem;
+                        font-size: clamp(0.8rem, 3vw, 1.5rem);
                         transition: color 0.3s;
                         &:hover {
                             color: yellow;
                         }
                     }
                     .description {
-                        font-size: 1rem;
+                        font-size: clamp(0.5rem, 3vw, 1rem);
                         transition: color 0.3s;
                         &:hover {
                             color: yellow;
@@ -538,12 +536,7 @@ nav {
             }
             &:hover {
                 clip-path: circle(70%);
-                background: #3a7bd5;
-                /* fallback for old browsers */
-                background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5);
-                /* Chrome 10-25, Safari 5.1-6 */
                 background: linear-gradient(to right, #3a6073, #3a7bd5);
-                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
         }
         .card_control {
