@@ -508,6 +508,8 @@ nav {
                 background: transparent;
                 transform: translateY(-50%);
                 cursor: pointer;
+                outline: none;
+                ;
                 i {
                     font-size: clamp(2rem, 3vw, 3rem);
                     color: rgba(255, 255, 255, 0.5);

@@ -754,6 +754,7 @@ nav ul li a {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
+  outline: none;
 }
 
 .pastEvents .pastEvents__container .image-carousel button i {
