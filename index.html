@@ -100,6 +100,10 @@
         </svg>
         <a name="events">
             <div class="contrast2"></div>
+            <div class="enlarged_image" id="enlarged_image">
+                <i class="fas fa-times " id="close_modal"></i>
+                <img src="IMG/orientation.png">
+            </div>
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -133,10 +137,7 @@
                             </div>
 
                         </div>
-                        <div class="enlarged_image" id="enlarged_image">
-                            <i class="fas fa-times " id="close_modal"></i>
-                            <img src="IMG/orientation.png">
-                        </div>
+
                     </div>
                     <div class="swiper-slide slide_two">
                         <div class="highlightedText lax" data-lax-preset_large="zoomInOut-0.4" data-lax-preset_small="zoomInOut-0.3">
@@ -296,33 +297,30 @@
     <script>
         var mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
-
             loop: true,
-
             // If we need pagination
             pagination: {
                 el: '.swiper-pagination',
             },
-
             // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-
             // And if we need scrollbar
             scrollbar: {
                 el: '.swiper-scrollbar',
             },
         })
+
+        //?Lax setup
         window.onload = function() {
             setTimeout(() => {
+                //?remove the loading screen
                 document.getElementById('loading').style.display = 'none';
                 document.body.style.overflowX = 'hidden';
                 document.body.style.overflowY = 'visible';
             }, 1000);
-
-
             lax.setup({
                     breakpoints: {
                         small: 0,
@@ -340,13 +338,18 @@
         }
 
         document.getElementById("modal").addEventListener('click', () => {
+
             document.getElementById("enlarged_image").style.display = "flex";
+            document.getElementById("enlarged_image").scrollIntoView();
+            document.body.style.overflow = 'hidden';
         })
         document.getElementById("modal").addEventListener('touch', () => {
             document.getElementById("enlarged_image").style.display = "flex";
         })
         document.getElementById("close_modal").addEventListener('click', () => {
             document.getElementById("enlarged_image").style.display = "none";
+            document.body.style.overflowX = 'hidden';
+            document.body.style.overflowY = 'visible';
         })
         document.getElementById("close_modal").addEventListener('touch', () => {
             document.getElementById("enlarged_image").style.display = "none";

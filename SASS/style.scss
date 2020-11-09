@@ -329,6 +329,31 @@ nav {
         width: 100vw;
         transform: translateY(-1%) scale(1.01);
     }
+    .enlarged_image {
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 50vh;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        cursor: default;
+        img {
+            width: 70%;
+        }
+        i {
+            position: absolute;
+            top: 2rem;
+            right: clamp(1rem, 3vw, 3rem);
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    }
     .swiper-container {
         width: 100vw;
         height: 150vh;
@@ -410,31 +435,6 @@ nav {
                         background-size: cover;
                         background-repeat: no-repeat;
                     }
-                }
-            }
-            .enlarged_image {
-                z-index: 99;
-                width: 100vw;
-                height: 150vh;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: rgba(0, 0, 0, 0.8);
-                display: none;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                cursor: default;
-                img {
-                    width: 70%;
-                }
-                i {
-                    position: absolute;
-                    top: 30vh;
-                    right: clamp(1rem, 3vw, 3rem);
-                    font-size: 2rem;
-                    color: white;
-                    cursor: pointer;
                 }
             }
         }
