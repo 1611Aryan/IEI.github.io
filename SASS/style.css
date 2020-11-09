@@ -901,11 +901,13 @@ nav ul li a {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  z-index: 4;
 }
 
 .team .card_container .card_control input[type=radio] {
   margin: 0 10px;
   cursor: pointer;
+  z-index: 4;
 }
 
 .team .card_container .card_control input[type='radio']:after {
@@ -920,6 +922,7 @@ nav ul li a {
   display: inline-block;
   visibility: visible;
   border: 1px solid white;
+  z-index: 4;
 }
 
 .team .card_container .card_control input[type='radio']:checked:after {
@@ -934,6 +937,7 @@ nav ul li a {
   display: inline-block;
   visibility: visible;
   border: 1px solid white;
+  z-index: 4;
 }
 
 .contact_us {

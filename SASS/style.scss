@@ -616,9 +616,11 @@ nav {
             bottom: 2rem;
             left: 50%;
             transform: translate(-50%);
+            z-index: 4;
             input[type=radio] {
                 margin: 0 10px;
                 cursor: pointer;
+                z-index: 4;
             }
             input[type='radio']:after {
                 width: 15px;
@@ -632,6 +634,7 @@ nav {
                 display: inline-block;
                 visibility: visible;
                 border: 1px solid white;
+                z-index: 4;
             }
             input[type='radio']:checked:after {
                 width: 15px;
@@ -645,6 +648,7 @@ nav {
                 display: inline-block;
                 visibility: visible;
                 border: 1px solid white;
+                z-index: 4;
             }
         }
     }
