@@ -158,8 +158,11 @@ window.addEventListener('scroll', () => {
         navHome.classList.add('active');
         navEvent.classList.remove('active');
         navTeam.classList.remove('active');
-        navTeam.style.marginRight = '0px';
         navContact.classList.remove('active');
+        navHome.parentElement.style.order = '1';
+        navEvent.parentElement.style.order = '2';
+        navTeam.parentElement.style.order = '3';
+        navContact.parentElement.style.order = '4';
         if (pageYOffset > 0.45 * pageHeight) {
             //?About us Animation loads when certain scroll position is reached
             about.classList.add('revealio');
@@ -172,6 +175,10 @@ window.addEventListener('scroll', () => {
         navTeam.classList.remove('active');
         navTeam.style.marginRight = '0px';
         navContact.classList.remove('active');
+        navHome.parentElement.style.order = '2';
+        navEvent.parentElement.style.order = '1';
+        navTeam.parentElement.style.order = '3';
+        navContact.parentElement.style.order = '4';
 
         if (pageYOffset >= 2.9 * pageHeight) {
             document.querySelector('.nowYouSeeMe').classList.add('alohomora');
@@ -180,12 +187,25 @@ window.addEventListener('scroll', () => {
             navHome.classList.remove('active');
             navEvent.classList.remove('active');
             navTeam.classList.add('active');
-            if (window.innerWidth >= 765) {
-                navTeam.style.marginRight = '20px';
-            }
             navContact.classList.remove('active');
+            navHome.parentElement.style.order = '2';
+            navEvent.parentElement.style.order = '3';
+            navTeam.parentElement.style.order = '1';
+            navContact.parentElement.style.order = '4';
         }
     }
+    if (pageYOffset >= 5 * pageHeight) {
+        navHome.classList.remove('active');
+        navEvent.classList.remove('active');
+        navTeam.classList.remove('active');
+        navContact.classList.add('active');
+        navHome.parentElement.style.order = '2';
+        navEvent.parentElement.style.order = '3';
+        navTeam.parentElement.style.order = '4';
+        navContact.parentElement.style.order = '1';
+    }
+}
+}
 });
 
 
