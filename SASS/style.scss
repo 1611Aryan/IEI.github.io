@@ -33,7 +33,7 @@ body {
     background: rgb(46, 46, 46);
     height: 100vh;
     width: 100vw;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -308,7 +308,7 @@ nav {
         height: 100%;
         background-color: rgba(226, 226, 226, 0.486);
         clip-path: circle(0%);
-        z-index: -1;
+        z-index: 2;
         transition: all 0.1s;
     }
     .contrast2 {
@@ -322,34 +322,94 @@ nav {
     }
     svg {
         position: absolute;
-        z-index: -2;
+        z-index: 4;
         top: 0;
         left: 0;
         width: 100vw;
         transform: translateY(-1%) scale(1.01);
     }
-    .highlightedText {
-        font-size: clamp(2.75rem, 5vw, 5.5rem);
-        animation: noir 1s ease infinite alternate-reverse;
-        color: #f1f2f3;
-        font-weight: 800;
+    .swiper-container {
+        width: 100vw;
+        height: 150vh;
         z-index: 3;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        span {
-            font-size: clamp(1.6rem, 3vw, 2rem);
+        .slide_one {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .poster {
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../IMG/orientation.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                opacity: 0.2;
+            }
+            .orientation_content {
+                background: rgba(0, 128, 128, 0.85);
+                width: 40%;
+                height: 60%;
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: justify;
+                border-radius: 25px;
+                h3 {
+                    color: white;
+                    font-size: clamp(1.75rem, 3vw, 3rem);
+                    span {
+                        display: inline-block;
+                        transition: all 0.7s;
+                        &:hover {
+                            transform: rotateY(360deg);
+                        }
+                    }
+                }
+                p {
+                    font-size: clamp(1rem, 3vw, 1.75rem);
+                    color: white;
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
         }
-    }
-    img {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        filter: brightness(80%);
-        z-index: -2;
+        .slide_two {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+            .highlightedText {
+                font-size: clamp(2.75rem, 5vw, 5.5rem);
+                animation: noir 1s ease infinite alternate-reverse;
+                color: #f1f2f3;
+                font-weight: 800;
+                z-index: 3;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                span {
+                    font-size: clamp(1.6rem, 3vw, 2rem);
+                }
+            }
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                filter: brightness(80%);
+                z-index: 1;
+            }
+        }
     }
 }
 

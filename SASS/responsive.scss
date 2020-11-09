@@ -92,6 +92,47 @@
         img {
             transform: scale(1.5);
         }
+        .swiper-container {
+            width: 100vw;
+            height: 150vh;
+            z-index: 3;
+            .slide_one {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .orientation_content {
+                    background: rgba(0, 128, 128, 0.85);
+                    width: 80%;
+                    height: 55%;
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: justify;
+                    border-radius: 25px;
+                    h3 {
+                        color: white;
+                        font-size: clamp(1.75rem, 3vw, 3rem);
+                        span {
+                            display: inline-block;
+                            transition: all 0.7s;
+                            &:hover {
+                                transform: rotateY(360deg);
+                            }
+                        }
+                    }
+                    p {
+                        font-size: clamp(1rem, 3vw, 1.75rem);
+                        color: white;
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
     }
     .pastEvents {
         .pastEvents__container {
