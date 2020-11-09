@@ -26,10 +26,12 @@ const imgArray = [
 ];
 //?hero image transition
 homeId.addEventListener('mousemove', (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    hero.style.transition = 'all 0.15s ease';
-    hero.style.transform = 'translateX(' + xAxis + 'px) translateY(' + yAxis + 'px)';
+    if (window.innerWidth > 765) {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        hero.style.transition = 'all 0.15s ease';
+        hero.style.transform = 'translateX(' + xAxis + 'px) translateY(' + yAxis + 'px)';
+    }
 });
 //?reset upon leaving
 home.addEventListener('mouseleave', (e) => {
@@ -38,98 +40,123 @@ home.addEventListener('mouseleave', (e) => {
 });
 //?about heading and border animation
 headClipImg.addEventListener('mousemove', e => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    headClipImg.style.transition = 'none';
-    headClipSVG.style.transition = "none";
-    headClipImg.style.backgroundPositionX = xAxis + 'px';
-    headClipImg.style.backgroundPositionY = yAxis + 'px';
-    headClipSVG.style.backgroundPositionX = xAxis / 3 + 'px';
-    headClipSVG.style.backgroundPositionY = yAxis / 3 + 'px';
+    if (window.innerWidth > 765) {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        headClipImg.style.transition = 'none';
+        headClipSVG.style.transition = "none";
+        headClipImg.style.backgroundPositionX = xAxis + 'px';
+        headClipImg.style.backgroundPositionY = yAxis + 'px';
+        headClipSVG.style.backgroundPositionX = xAxis / 3 + 'px';
+        headClipSVG.style.backgroundPositionY = yAxis / 3 + 'px';
+    }
 });
 //?reset upon leaving
 headClipImg.addEventListener('mouseleave', () => {
-    headClipImg.style.transition = "0.5s all ease";
-    headClipSVG.style.transition = "0.5s all ease";
-    headClipImg.style.backgroundPositionX = '0px';
-    headClipImg.style.backgroundPositionY = '0px';
-    headClipSVG.style.backgroundPositionX = '0px';
-    headClipSVG.style.backgroundPositionY = '0px';
+    if (window.innerWidth > 765) {
+        headClipImg.style.transition = "0.5s all ease";
+        headClipSVG.style.transition = "0.5s all ease";
+        headClipImg.style.backgroundPositionX = '0px';
+        headClipImg.style.backgroundPositionY = '0px';
+        headClipSVG.style.backgroundPositionX = '0px';
+        headClipSVG.style.backgroundPositionY = '0px';
+    }
 });
 //?The bubble appears when mouse is moved over About home
 homeId.addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY;
-    document.getElementById('cursor_circle_home').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_home').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
-    console.log(xAxis, yAxis);
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY;
+        document.getElementById('cursor_circle_home').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_home').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 homeId.addEventListener('mouseleave', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY;
-    document.getElementById('cursor_circle_home').style.transition = "all 0.5s";
-    document.getElementById('cursor_circle_home').style.clipPath = "circle(0% at  center)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY;
+        document.getElementById('cursor_circle_home').style.transition = "all 0.5s";
+        document.getElementById('cursor_circle_home').style.clipPath = "circle(0% at  center)";
+    }
 });
 //?
 //?The bubble appears when mouse is moved over About section
 about_parent.addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight;
-    cursor_circle.style.transition = "all 0.1s";
-    cursor_circle.style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight;
+        cursor_circle.style.transition = "all 0.1s";
+        cursor_circle.style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 about_parent.addEventListener('mouseleave', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight;
-    cursor_circle.style.transition = "all 0.5s";
-    cursor_circle.style.clipPath = "circle(0% at center)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight;
+        cursor_circle.style.transition = "all 0.5s";
+        cursor_circle.style.clipPath = "circle(0% at center)";
+    }
 });
 //?The bubble appears when mouse is moved over events section
 document.getElementById('events').addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 2.;
-    document.getElementById('cursor_circle_events').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_events').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 2.;
+        document.getElementById('cursor_circle_events').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_events').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 document.getElementById('events').addEventListener('mouseleave', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 2;
-    document.getElementById('cursor_circle_events').style.transition = "all 0.5s";
-    document.getElementById('cursor_circle_events').style.clipPath = "circle(0% at center)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 2;
+        document.getElementById('cursor_circle_events').style.transition = "all 0.5s";
+        document.getElementById('cursor_circle_events').style.clipPath = "circle(0% at center)";
+    }
 });
 //?The bubble appears when mouse is moved over past events section
 document.getElementById('pastEvents').addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 3.5;
-    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 3.5;
+        document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 document.getElementById('pastEvents').addEventListener('mouseleave', e => {
     document.getElementById('cursor_circle_pastevents').style.transition = "all 0.5s";
     document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(0% at  center)";
 });
 document.getElementById('cursor_image_carousel').addEventListener('mouseenter', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 3.5;
-    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 3.5;
+        document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 document.getElementById('cursor_image_carousel').addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 3.5;
-    document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 3.5;
+        document.getElementById('cursor_circle_pastevents').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_pastevents').style.clipPath = "circle(2% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 //?
 document.getElementById('team').addEventListener('mousemove', e => {
-    let xAxis = e.pageX;
-    let yAxis = e.pageY - window.innerHeight * 4.5;
-    document.getElementById('cursor_circle_team').style.transition = "all 0.1s";
-    document.getElementById('cursor_circle_team').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    if (window.innerWidth > 765) {
+        let xAxis = e.pageX;
+        let yAxis = e.pageY - window.innerHeight * 4.5;
+        document.getElementById('cursor_circle_team').style.transition = "all 0.1s";
+        document.getElementById('cursor_circle_team').style.clipPath = "circle(5% at " + xAxis + "px " + yAxis + "px)";
+    }
 });
 document.getElementById('team').addEventListener('mouseleave', e => {
-    document.getElementById('cursor_circle_team').style.transition = "all 0.5s";
-    document.getElementById('cursor_circle_team').style.clipPath = "circle(0% at center)";
+    if (window.innerWidth > 765) {
+        document.getElementById('cursor_circle_team').style.transition = "all 0.5s";
+        document.getElementById('cursor_circle_team').style.clipPath = "circle(0% at center)";
+    }
 });
 //?Nav elements change position and color  when different section of pages are scrolled to
 window.addEventListener('scroll', () => {
@@ -170,16 +197,16 @@ window.addEventListener('scroll', () => {
             navTeam.parentElement.style.order = '1';
             navContact.parentElement.style.order = '4';
         }
-    }
-    if (pageYOffset >= 5 * pageHeight) {
-        navHome.classList.remove('active');
-        navEvent.classList.remove('active');
-        navTeam.classList.remove('active');
-        navContact.classList.add('active');
-        navHome.parentElement.style.order = '2';
-        navEvent.parentElement.style.order = '3';
-        navTeam.parentElement.style.order = '4';
-        navContact.parentElement.style.order = '1';
+        if (pageYOffset >= 5 * pageHeight) {
+            navHome.classList.remove('active');
+            navEvent.classList.remove('active');
+            navTeam.classList.remove('active');
+            navContact.classList.add('active');
+            navHome.parentElement.style.order = '2';
+            navEvent.parentElement.style.order = '3';
+            navTeam.parentElement.style.order = '4';
+            navContact.parentElement.style.order = '1';
+        }
     }
 });
 //?Counters Don't Mess
