@@ -3,7 +3,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
           user-select: none;
   height: 550vh;
   cursor: none;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
