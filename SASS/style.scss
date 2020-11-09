@@ -347,6 +347,9 @@ nav {
                 background: url(../IMG/orientation.png);
                 background-size: cover;
                 background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 150%;
+                background-position: -100%;
                 opacity: 0.2;
             }
             .orientation_content {
