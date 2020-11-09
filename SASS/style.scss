@@ -339,19 +339,29 @@ nav {
             justify-content: center;
             align-items: center;
             .poster {
-                z-index: -1;
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
-                background: url(../IMG/orientation.png);
-                background-size: cover;
-                background-repeat: no-repeat;
+                width: 100vw;
+                height: 150vh;
                 background-attachment: fixed;
-                background-size: 150%;
-                background-position: -100%;
-                opacity: 0.2;
+                background-position: center;
+                z-index: -1;
+                background: url(../IMG/desktop.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                filter: blur(1px);
+                // background-position: -100%;
+                opacity: 0.5;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.2);
+                }
             }
             .orientation_content {
                 background: rgba(0, 128, 128, 0.85);
@@ -364,6 +374,7 @@ nav {
                 flex-direction: column;
                 text-align: justify;
                 border-radius: 25px;
+                position: relative;
                 h3 {
                     color: white;
                     font-size: clamp(1.75rem, 3vw, 3rem);
@@ -381,6 +392,49 @@ nav {
                     a {
                         text-decoration: none;
                     }
+                }
+                .modal {
+                    width: 45%;
+                    height: 23%;
+                    border: 2.5px solid black;
+                    margin-top: 3rem;
+                    overflow: hidden;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    .img {
+                        filter: blur(0.5px);
+                        width: 100%;
+                        height: 100%;
+                        image-rendering: pixelated;
+                        background: url(../IMG/orientation.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+            .enlarged_image {
+                z-index: 99;
+                width: 100vw;
+                height: 150vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                cursor: default;
+                img {
+                    width: 70%;
+                }
+                i {
+                    position: absolute;
+                    top: 30vh;
+                    right: clamp(1rem, 3vw, 3rem);
+                    font-size: 2rem;
+                    color: white;
+                    cursor: pointer;
                 }
             }
         }
@@ -607,7 +661,7 @@ nav {
             background-size: cover;
             z-index: 0;
             border-radius: 25px 25px 0 0;
-            filter: blur(10px);
+            filter: blur(3px);
         }
         .container {
             height: 70%;

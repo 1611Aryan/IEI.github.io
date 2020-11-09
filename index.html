@@ -128,11 +128,19 @@
                                 <span><a href="https://tinyurl.com/ieitiet" target="_blank"
                                         style=" color: rgb(209, 255, 6);">https://tinyurl.com/ieitiet</a></span>
                             </p>
+                            <div class="modal" id="modal">
+                                <div class="img"></div>
+                            </div>
+
+                        </div>
+                        <div class="enlarged_image" id="enlarged_image">
+                            <i class="fas fa-times " id="close_modal"></i>
+                            <img src="IMG/orientation.png">
                         </div>
                     </div>
                     <div class="swiper-slide slide_two">
                         <div class="highlightedText lax" data-lax-preset_large="zoomInOut-0.4" data-lax-preset_small="zoomInOut-0.3">
-                            <h3>Recruiting SuperSoon!</h3><span>Opening for First Year</span>
+                            <h3>Recruiting SuperSoon!</h3><span>Opening for First Year and Second Year</span>
                         </div>
                         <img src="IMG/avatar.png">
                     </div>
@@ -143,8 +151,8 @@
                 <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev" style="color:white"></div>
-                <div class="swiper-button-next" style="color:white"></div>
+                <div class="swiper-button-prev button_event" style="color:white"></div>
+                <div class="swiper-button-next button_event" style="color:white"></div>
 
                 <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
@@ -239,8 +247,8 @@
                 </span>
             </p>
             <p class="contact_number">
-                <a href="mailto:contact@ieithapar.com" target="_blank">
-                    contact@ieithapar.com
+                <a href="mailto:iei_sc@thapar.edu" target="_blank">
+                    iei_sc@thapar.edu
                 </a>
                 <br> <span>Swapnil Duggal </span><span>+91 85270 59742</span>
                 <br> <span>Amiti Johar &nbsp; &nbsp; &nbsp; &nbsp; </span><span>+91 90416 67890</span>
@@ -263,12 +271,17 @@
                             </a>
                         </li>
                         <li>
+                            <a href="https://www.instagram.com/iei_sc.tiet/?hl=en" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
                             <a href="https://www.linkedin.com/company/institution-of-engineers-india-thapar-student-s-chapter/" target="_blank">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:contact@ieithapar.com" target="_blank">
+                            <a href="mailto:iei_sc@thapar.edu" target="_blank">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </li>
@@ -325,6 +338,19 @@
 
             window.requestAnimationFrame(updateLax)
         }
+
+        document.getElementById("modal").addEventListener('click', () => {
+            document.getElementById("enlarged_image").style.display = "flex";
+        })
+        document.getElementById("modal").addEventListener('touch', () => {
+            document.getElementById("enlarged_image").style.display = "flex";
+        })
+        document.getElementById("close_modal").addEventListener('click', () => {
+            document.getElementById("enlarged_image").style.display = "none";
+        })
+        document.getElementById("close_modal").addEventListener('touch', () => {
+            document.getElementById("enlarged_image").style.display = "none";
+        })
     </script>
     <script src="TS/app.js"></script>
 </body>

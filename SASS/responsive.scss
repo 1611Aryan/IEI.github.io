@@ -96,53 +96,25 @@
             width: 100vw;
             height: 150vh;
             z-index: 3;
+            .button_event {
+                transform: scale(0.6);
+            }
             .slide_one {
                 position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 .poster {
-                    z-index: -1;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: url(../IMG/orientation.png);
-                    background-size: cover;
-                    //background-position: center center;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    opacity: 0.2;
+                    background: url(../IMG/phone.png);
                 }
                 .orientation_content {
-                    background: rgba(0, 128, 128, 0.85);
                     width: 80%;
                     height: 55%;
                     padding: 1rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    text-align: justify;
-                    border-radius: 25px;
-                    h3 {
-                        color: white;
-                        font-size: clamp(1.75rem, 3vw, 3rem);
-                        span {
-                            display: inline-block;
-                            transition: all 0.7s;
-                            &:hover {
-                                transform: rotateY(360deg);
-                            }
-                        }
-                    }
-                    p {
-                        font-size: clamp(1rem, 3vw, 1.75rem);
-                        color: white;
-                        a {
-                            text-decoration: none;
-                        }
+                    .modal {
+                        width: 70%;
+                        height: 24%;
+                        filter: blur(0px);
                     }
                 }
             }
@@ -254,6 +226,13 @@
                     top: 1px;
                     left: 1px;
                 }
+            }
+        }
+    }
+    .contact_us {
+        .footer {
+            .column_two {
+                width: 50%;
             }
         }
     }
