@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IEI</title>
+    <!--?Favicon-->
+    <link rel="shortcut icon" type="image/png" href="IMG/Favicon.png" />
     <!--?Font Awesome-->
     <script src="https://kit.fontawesome.com/ea6e17d3b1.js" crossorigin="anonymous"></script>
     <!--?Poppins-->
@@ -15,7 +17,19 @@
 </head>
 
 <body>
-    <nav>
+    <div class="loading" id="loading">
+        <section class="stuff">
+            <img src="IMG/logo.png">
+            <div class="fluid_loading">
+            </div>
+        </section>
+    </div>
+    <div id="nav_manager">
+        <i class="fas fa-bars menu" id="open"></i>
+        <i class="fas fa-times menu" id="close"></i>
+    </div>
+
+    <nav id="nav">
 
         <img src="IMG/logo.png" alt="Logo">
         <ul>
@@ -109,8 +123,8 @@
     </section>
 
     <a name="team">
-        <section class="team">
-
+        <section class="team" id="team">
+            <div id="cursor_circle_team"></div>
             <h1><span>O</span><span>U</span><span>R</span> <span>T</span><span>E</span><span>A</span><span>M</span></h1>
             <div class="card_container">
                 <div class="team_image"></div>
@@ -178,9 +192,66 @@
 
         </section>
     </a>
+
+
+    <section class="contact_us" id="contact_us">
+        <div class="contact_contrast"></div>
+        <p class="contact_message">
+            Contact us
+            <br>
+            <span>
+                Get in touch and let's make something great together.
+            </span>
+        </p>
+        <p class="contact_number">
+            <a href="mailto:contact@ieithapar.com" target="_blank">
+                contact@ieithapar.com
+            </a>
+            <br> <span>Swapnil Duggal </span><span>+91 85270 59742</span>
+            <br> <span>Amiti Johar &nbsp; &nbsp; &nbsp; &nbsp; </span><span>+91 90416 67890</span>
+        </p>
+        <hr>
+        <div class="footer">
+            <div class="column_one">
+                <h4>Where To Find Us</h4>
+                <br>
+                <span>Office Thapar Institute</span>
+                <br><span>Patiala</span>
+            </div>
+            <div class="column_two">
+                <h4>Follow Us</h4>
+                <br>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/ieithapar/" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/institution-of-engineers-india-thapar-student-s-chapter/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:contact@ieithapar.com" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <script>
         window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.body.style.overflowX = 'hidden';
+                document.body.style.overflowY = 'visible';
+            }, 1000);
+
+
             lax.setup({
                     breakpoints: {
                         small: 0,

@@ -8,7 +8,7 @@
 body {
     background-color: rgb(79, 100, 117);
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     user-select: none;
     height: 550vh;
     cursor: none;
@@ -27,6 +27,57 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     border: 3px solid rgb(153, 153, 153);
+}
+
+.loading {
+    background: rgb(46, 46, 46);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vw;
+        height: 25vw;
+        overflow: hidden;
+        position: relative;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .fluid_loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        background: #3b80ff;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: loading 1s ease-in-out forwards;
+        clip-path: circle(0%);
+    }
+}
+
+@keyframes loading {
+    to {
+        clip-path: circle(100% at bottom);
+        background: rgb(0, 139, 121);
+    }
+}
+
+#nav_manager {
+    display: none;
 }
 
 nav {
@@ -121,13 +172,13 @@ nav {
         }
     }
     .name {
-        font-size: clamp(4rem, 3vw, 6rem);
+        font-size: clamp(4rem, 5vw, 7rem);
         font-weight: 900;
         z-index: 5;
         p {
             color: white;
-            height: clamp(4rem, 3vw, 6rem);
-            line-height: clamp(4rem, 3vw, 6rem);
+            height: clamp(4rem, 5vw, 7rem);
+            line-height: clamp(4rem, 5vw, 7rem);
             transition: all 0.5s ease;
             &:nth-of-type(2n+1) {
                 transform-style: preserve-3d;
@@ -147,7 +198,7 @@ nav {
 
 @keyframes slide-right {
     from {
-        transform: translate3D(-100vw, 0, 50px);
+        transform: translate3D(-100vw, 0, 60px);
     }
     to {
         transform: translate3D(0%, 0%, 0px);
@@ -278,7 +329,7 @@ nav {
         transform: translateY(-1%) scale(1.01);
     }
     .highlightedText {
-        font-size: clamp(2.75rem, 3vw, 5rem);
+        font-size: clamp(2.75rem, 5vw, 5.5rem);
         animation: noir 1s ease infinite alternate-reverse;
         color: #f1f2f3;
         font-weight: 800;
@@ -437,17 +488,28 @@ nav {
 }
 
 .team {
-    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+    position: relative;
+    #cursor_circle_team {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        clip-path: circle(0%);
+        z-index: 1;
+    }
     h1 {
         font-size: clamp(2.5rem, 3vw, 3.5rem);
         margin-top: 2rem;
         color: #1A2C32;
+        z-index: 2;
         span {
             display: inline-block;
             transition: all 0.7s;
@@ -465,6 +527,9 @@ nav {
         border-radius: 25px 25px 0 0;
         background-color: rgba(0, 0, 0, 0.4);
         position: relative;
+        z-index: 1;
+        cursor: default;
+        //margin-bottom: 10px;
         .team_image {
             width: 100%;
             height: 100%;
@@ -474,7 +539,7 @@ nav {
             background: url(../IMG/team1.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            z-index: -1;
+            z-index: 0;
             border-radius: 25px 25px 0 0;
             filter: blur(10px);
         }
@@ -487,6 +552,7 @@ nav {
             //clip-path: circle(18.5% at 49.75% 26.5%);
             clip-path: circle(22% at center);
             transition: all 0.7s ease;
+            z-index: 9;
             .card {
                 width: 100%;
                 height: 100%;
@@ -552,6 +618,7 @@ nav {
             transform: translate(-50%);
             input[type=radio] {
                 margin: 0 10px;
+                cursor: pointer;
             }
             input[type='radio']:after {
                 width: 15px;
@@ -578,6 +645,141 @@ nav {
                 display: inline-block;
                 visibility: visible;
                 border: 1px solid white;
+            }
+        }
+    }
+}
+
+.contact_us {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../IMG/keyboard.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction: column;
+    color: white;
+    cursor: default;
+    .contact_contrast {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(64, 91, 114, 0.8);
+    }
+    .contact_message {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        font-size: clamp(1.75rem, 3vw, 3rem);
+        font-weight: 700;
+        color: rgb(192, 192, 192);
+        h3 {
+            &:hover {
+                color: rgb(240, 196, 203);
+            }
+        }
+        span {
+            font-weight: 400;
+            margin-top: 10px;
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            color: white;
+            &:hover {
+                color: rgb(240, 196, 203);
+            }
+        }
+    }
+    .contact_number {
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        color: white;
+        a {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            text-decoration: none;
+            color: rgb(192, 192, 192);
+            font-weight: 600;
+            &:hover {
+                color: rgba(255, 255, 107, 0.8);
+            }
+        }
+        span {
+            font-size: clamp(1rem, 3vw, 1.55rem);
+            &:hover {
+                color: rgba(255, 255, 107, 0.8);
+            }
+        }
+    }
+    hr {
+        position: absolute;
+        top: 67.5%;
+        left: 10%;
+        width: 85%;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        &:hover {
+            background: rgba(255, 255, 107, 0.8);
+        }
+    }
+    .footer {
+        width: 85%;
+        height: 30%;
+        position: absolute;
+        left: 10%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .column_one {
+            width: 40%;
+            height: 100%;
+            h4 {
+                font-size: clamp(1.25rem, 3vw, 2.5rem);
+                &:hover {
+                    color: rgb(255, 255, 107);
+                }
+            }
+            span {
+                font-size: clamp(1rem, 3vw, 1.75rem);
+                &:hover {
+                    color: rgb(255, 255, 107);
+                }
+            }
+        }
+        .column_two {
+            width: 40%;
+            height: 100%;
+            h4 {
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                &:hover {
+                    color: rgb(255, 255, 107);
+                }
+            }
+            ul {
+                width: 70%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                list-style-type: none;
+                li {
+                    font-size: clamp(1.5rem, 3vw, 3rem);
+                    transition: transform 0.5s;
+                    a {
+                        color: white;
+                    }
+                    &:hover {
+                        a {
+                            color: rgb(255, 255, 107);
+                        }
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
     }

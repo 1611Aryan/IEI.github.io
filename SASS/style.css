@@ -9,7 +9,7 @@
 body {
   background-color: #4f6475;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -31,6 +31,82 @@ body {
   background-color: white;
   border-radius: 20px;
   border: 3px solid #999999;
+}
+
+.loading {
+  background: #2e2e2e;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loading section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25vw;
+  height: 25vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading img {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.loading .fluid_loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background: #3b80ff;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: loading 1s ease-in-out forwards;
+          animation: loading 1s ease-in-out forwards;
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+}
+
+@-webkit-keyframes loading {
+  to {
+    -webkit-clip-path: circle(100% at bottom);
+            clip-path: circle(100% at bottom);
+    background: #008b79;
+  }
+}
+
+@keyframes loading {
+  to {
+    -webkit-clip-path: circle(100% at bottom);
+            clip-path: circle(100% at bottom);
+    background: #008b79;
+  }
+}
+
+#nav_manager {
+  display: none;
 }
 
 nav {
@@ -156,15 +232,15 @@ nav ul li a {
 }
 
 .home .name {
-  font-size: clamp(4rem, 3vw, 6rem);
+  font-size: clamp(4rem, 5vw, 7rem);
   font-weight: 900;
   z-index: 5;
 }
 
 .home .name p {
   color: white;
-  height: clamp(4rem, 3vw, 6rem);
-  line-height: clamp(4rem, 3vw, 6rem);
+  height: clamp(4rem, 5vw, 7rem);
+  line-height: clamp(4rem, 5vw, 7rem);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -191,8 +267,8 @@ nav ul li a {
 
 @-webkit-keyframes slide-right {
   from {
-    -webkit-transform: translate3D(-100vw, 0, 50px);
-            transform: translate3D(-100vw, 0, 50px);
+    -webkit-transform: translate3D(-100vw, 0, 60px);
+            transform: translate3D(-100vw, 0, 60px);
   }
   to {
     -webkit-transform: translate3D(0%, 0%, 0px);
@@ -202,8 +278,8 @@ nav ul li a {
 
 @keyframes slide-right {
   from {
-    -webkit-transform: translate3D(-100vw, 0, 50px);
-            transform: translate3D(-100vw, 0, 50px);
+    -webkit-transform: translate3D(-100vw, 0, 60px);
+            transform: translate3D(-100vw, 0, 60px);
   }
   to {
     -webkit-transform: translate3D(0%, 0%, 0px);
@@ -401,7 +477,7 @@ nav ul li a {
 }
 
 .events .highlightedText {
-  font-size: clamp(2.75rem, 3vw, 5rem);
+  font-size: clamp(2.75rem, 5vw, 5.5rem);
   animation: noir 1s ease infinite alternate-reverse;
   color: #f1f2f3;
   font-weight: 800;
@@ -631,7 +707,6 @@ nav ul li a {
 }
 
 .team {
-  position: relative;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -647,12 +722,26 @@ nav ul li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+}
+
+.team #cursor_circle_team {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+  z-index: 1;
 }
 
 .team h1 {
   font-size: clamp(2.5rem, 3vw, 3.5rem);
   margin-top: 2rem;
   color: #1A2C32;
+  z-index: 2;
 }
 
 .team h1 span {
@@ -681,6 +770,8 @@ nav ul li a {
   border-radius: 25px 25px 0 0;
   background-color: rgba(0, 0, 0, 0.4);
   position: relative;
+  z-index: 1;
+  cursor: default;
 }
 
 .team .card_container .team_image {
@@ -692,7 +783,7 @@ nav ul li a {
   background: url(../IMG/team1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1;
+  z-index: 0;
   border-radius: 25px 25px 0 0;
   -webkit-filter: blur(10px);
           filter: blur(10px);
@@ -709,6 +800,7 @@ nav ul li a {
           clip-path: circle(22% at center);
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
+  z-index: 9;
 }
 
 .team .card_container .container .card {
@@ -813,6 +905,7 @@ nav ul li a {
 
 .team .card_container .card_control input[type=radio] {
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .team .card_container .card_control input[type='radio']:after {
@@ -841,5 +934,189 @@ nav ul li a {
   display: inline-block;
   visibility: visible;
   border: 1px solid white;
+}
+
+.contact_us {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../IMG/keyboard.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  cursor: default;
+}
+
+.contact_us .contact_contrast {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(64, 91, 114, 0.8);
+}
+
+.contact_us .contact_message {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 700;
+  color: silver;
+}
+
+.contact_us .contact_message h3:hover {
+  color: #f0c4cb;
+}
+
+.contact_us .contact_message span {
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: white;
+}
+
+.contact_us .contact_message span:hover {
+  color: #f0c4cb;
+}
+
+.contact_us .contact_number {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: white;
+}
+
+.contact_us .contact_number a {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  text-decoration: none;
+  color: silver;
+  font-weight: 600;
+}
+
+.contact_us .contact_number a:hover {
+  color: rgba(255, 255, 107, 0.8);
+}
+
+.contact_us .contact_number span {
+  font-size: clamp(1rem, 3vw, 1.55rem);
+}
+
+.contact_us .contact_number span:hover {
+  color: rgba(255, 255, 107, 0.8);
+}
+
+.contact_us hr {
+  position: absolute;
+  top: 67.5%;
+  left: 10%;
+  width: 85%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.contact_us hr:hover {
+  background: rgba(255, 255, 107, 0.8);
+}
+
+.contact_us .footer {
+  width: 85%;
+  height: 30%;
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_us .footer .column_one {
+  width: 40%;
+  height: 100%;
+}
+
+.contact_us .footer .column_one h4 {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.contact_us .footer .column_one h4:hover {
+  color: #ffff6b;
+}
+
+.contact_us .footer .column_one span {
+  font-size: clamp(1rem, 3vw, 1.75rem);
+}
+
+.contact_us .footer .column_one span:hover {
+  color: #ffff6b;
+}
+
+.contact_us .footer .column_two {
+  width: 40%;
+  height: 100%;
+}
+
+.contact_us .footer .column_two h4 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.contact_us .footer .column_two h4:hover {
+  color: #ffff6b;
+}
+
+.contact_us .footer .column_two ul {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+.contact_us .footer .column_two ul li {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.contact_us .footer .column_two ul li a {
+  color: white;
+}
+
+.contact_us .footer .column_two ul li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.contact_us .footer .column_two ul li:hover a {
+  color: #ffff6b;
 }
 /*# sourceMappingURL=style.css.map */

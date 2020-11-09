@@ -2,8 +2,62 @@
   body {
     max-width: 100vw;
   }
+  .loading section {
+    width: 50vw;
+    height: 50vw;
+  }
+  #nav_manager {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    cursor: pointer;
+  }
+  #nav_manager .menu {
+    color: white;
+    font-size: 2rem;
+  }
+  #nav_manager .menu:hover {
+    color: pink;
+  }
+  #nav_manager #close {
+    display: none;
+  }
   nav {
     display: none;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    cursor: pointer;
+  }
+  nav img {
+    width: 20%;
+  }
+  nav ul {
+    list-style-type: none;
+    z-index: 2;
+  }
+  nav ul li {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .active {
+    position: relative;
+    left: 0%;
+    top: 0%;
+    color: yellow;
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
   .home #hero-container .img {
     display: block;
