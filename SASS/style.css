@@ -800,7 +800,6 @@ nav ul li a {
           clip-path: circle(22% at center);
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
-  z-index: 9;
 }
 
 .team .card_container .container .card {
