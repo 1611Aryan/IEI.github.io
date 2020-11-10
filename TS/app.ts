@@ -319,6 +319,7 @@ if (nextBtn) {
 //?Changing team cards based on radio
 const radio1 = document.getElementById('card_list_one');
 const radio2 = document.getElementById('card_list_two');
+const radio3 = document.getElementById('card_list_three');
 const name1 = document.getElementById('name_card_one');
 const name2 = document.getElementById('name_card_two');
 const img1 = document.getElementById('card_image_one');
@@ -328,12 +329,12 @@ const designation2 = document.getElementById('card_designation_two');
 const about1 = document.getElementById('card_about_one');
 const about2 = document.getElementById('card_about_two');
 const card_credentials = [
-    ['Harry Potter', 'IMG/Team/potter.jpg', 'Auror', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
-    ['Ron Weasley', 'IMG/Team/weasley.jpg', 'Auror', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
-    ['Hermoine Granger', 'IMG/Team/hermione.jpg', 'Minister Of Magic', 'The brightest witch of her age. The founder of S.P.E.W'],
-    ['Harry Potter', 'IMG/Team/potter.jpg', 'Auror', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
-    ['Ron Weasley', 'IMG/Team/weasley.jpg', 'Auror', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
-    ['Hermoine Granger', 'IMG/Team/hermione.jpg', 'Minister Of Magic', 'The brightest witch of her age. The founder of S.P.E.W']
+    ['Swapnil Duggal', 'IMG/Team/potter.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
+    ['Amiti Johar', 'IMG/Team/weasley.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
+    ['Shefali Dutta', 'IMG/Team/hermione.jpg', 'Convener', 'The brightest witch of her age. The founder of S.P.E.W'],
+    ['Animesh Bisen', 'IMG/Team/potter.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
+    ['Piyush Sethi', 'IMG/Team/weasley.jpg', 'Joint Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
+    ['Rushabh Kanodia', 'IMG/Team/hermione.jpg', 'Joint Secretary', 'The brightest witch of her age. The founder of S.P.E.W']
 ]
 
 const render_card = (i = 0) => {
@@ -362,6 +363,9 @@ radio1.addEventListener('click', () => {
 });
 radio2.addEventListener('click', () => {
     render_card(2);
+});
+radio3.addEventListener('click', () => {
+    render_card(4);
 });
 //?
 
