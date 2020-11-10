@@ -332,7 +332,7 @@ const card_credentials = [
     ['Swapnil Duggal', 'IMG/Team/potter.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
     ['Amiti Johar', 'IMG/Team/weasley.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
     ['Shefali Dutta', 'IMG/Team/hermione.jpg', 'Convener', 'The brightest witch of her age. The founder of S.P.E.W'],
-    ['Animesh Bisen', 'IMG/Team/potter.jpg', 'General Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
+    ['Animesh Bisen', 'IMG/Team/potter.jpg', 'Finance Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
     ['Piyush Sethi', 'IMG/Team/weasley.jpg', 'Joint Secretary', 'The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.'],
     ['Rushabh Kanodia', 'IMG/Team/hermione.jpg', 'Joint Secretary', 'The brightest witch of her age. The founder of S.P.E.W']
 ]
