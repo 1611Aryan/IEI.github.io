@@ -4,14 +4,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: rgb(79, 100, 117);
+    background-color: rgb(69, 100, 117);
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
     user-select: none;
     height: 550vh;
     cursor: none;
-    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -95,6 +98,7 @@ nav {
     box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(1px);
     cursor: pointer;
+    overflow: hidden;
     img {
         z-index: 2;
         margin-top: 2rem;
@@ -108,7 +112,7 @@ nav {
         flex-direction: column;
         align-items: center;
         li {
-            font-size: clamp(0.7rem, 3vw, 1.1rem);
+            font-size: clamp(0.7rem, 3vw, 1rem);
             margin-bottom: 2rem;
             text-align: center;
             a {
@@ -194,6 +198,27 @@ nav {
                 transform: translate3D(0, 0, 15px);
             }
         }
+    }
+    .downArrow {
+        position: absolute;
+        bottom: 1rem;
+        right: 2rem;
+        z-index: 7;
+        i {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            animation: bounce 0.5s linear infinite alternate;
+            &:hover {
+                color: rgba(0, 0, 0, 0.822);
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-10px);
     }
 }
 
@@ -354,7 +379,7 @@ nav {
             cursor: pointer;
         }
     }
-    .swiper-container {
+    .swiper-container_events {
         width: 100vw;
         height: 150vh;
         z-index: 3;
@@ -369,12 +394,9 @@ nav {
                 left: 0;
                 width: 100vw;
                 height: 150vh;
-                background-attachment: fixed;
-                background-position: center;
-                z-index: -1;
                 background: url(../IMG/desktop.jpg);
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: 100%;
                 filter: blur(1px);
                 // background-position: -100%;
                 opacity: 0.5;
@@ -403,6 +425,7 @@ nav {
                 h3 {
                     color: white;
                     font-size: clamp(1.75rem, 3vw, 3rem);
+                    margin-bottom: 1rem;
                     span {
                         display: inline-block;
                         transition: all 0.7s;
@@ -628,7 +651,7 @@ nav {
     h1 {
         font-size: clamp(2.5rem, 3vw, 3.5rem);
         margin-top: 2rem;
-        color: #1A2C32;
+        color: rgb(255, 255, 255);
         z-index: 2;
         span {
             display: inline-block;
@@ -638,136 +661,98 @@ nav {
             }
         }
     }
-    .card_container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .swiper-container_team {
         width: 90%;
         height: 100%;
         border-radius: 25px 25px 0 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        //background-color: rgba(0, 0, 0, 0.4);
         position: relative;
         z-index: 1;
         cursor: default;
-        //margin-bottom: 10px;
-        .team_image {
-            width: 100%;
-            height: 100%;
+        overflow: hidden;
+        .teamIMG {
             position: absolute;
             top: 0;
             left: 0;
-            background: url(../IMG/team1.jpg);
-            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-image: url(../IMG/team3.jpg);
             background-size: cover;
-            z-index: 0;
+            background-position: center center;
             border-radius: 25px 25px 0 0;
-            filter: blur(3px);
+            z-index: -1;
+            filter: blur(2px)
         }
-        .container {
-            height: 70%;
-            width: 27.5%;
-            background: linear-gradient(to right, #243B55, #141E30);
-            border-radius: 25px;
-            position: relative;
-            //clip-path: circle(18.5% at 49.75% 26.5%);
-            clip-path: circle(22% at center);
-            transition: all 0.7s ease;
-            .card {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                .image-container {
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            .container {
+                height: 70%;
+                width: 27.5%;
+                background: linear-gradient(to right, #243B55, #141E30);
+                border-radius: 25px;
+                position: relative;
+                clip-path: circle(21% at center);
+                transition: all 0.7s ease;
+                .card {
+                    width: 100%;
+                    height: 100%;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+                    justify-content: center;
                     flex-direction: column;
-                    img {
-                        width: 50%;
-                        border-radius: 50%;
+                    .image-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        img {
+                            width: 50%;
+                            border-radius: 50%;
+                        }
                     }
-                }
-                .name {
-                    position: absolute;
-                    top: 5%;
-                    left: 10px;
-                    text-align: center;
-                    font-weight: 500;
-                    font-size: clamp(0.8rem, 3vw, 2rem);
-                    color: white;
-                    transition: color 0.3s;
-                    &:hover {
-                        color: yellow;
-                    }
-                }
-                .card-info {
-                    position: absolute;
-                    left: 50%;
-                    top: 70%;
-                    transform: translate(-50%);
-                    width: 80%;
-                    color: white;
-                    .designatory {
-                        font-size: clamp(0.8rem, 3vw, 1.5rem);
+                    .name {
+                        position: absolute;
+                        top: 5%;
+                        left: 10px;
+                        text-align: center;
+                        font-weight: 500;
+                        font-size: clamp(0.8rem, 3vw, 2rem);
+                        color: white;
                         transition: color 0.3s;
                         &:hover {
                             color: yellow;
                         }
                     }
-                    .description {
-                        font-size: clamp(0.5rem, 3vw, 1rem);
-                        transition: color 0.3s;
-                        &:hover {
-                            color: yellow;
+                    .card-info {
+                        position: absolute;
+                        left: 50%;
+                        top: 70%;
+                        transform: translate(-50%);
+                        width: 80%;
+                        color: white;
+                        .designatory {
+                            font-size: clamp(0.8rem, 3vw, 1.5rem);
+                            transition: color 0.3s;
+                            &:hover {
+                                color: yellow;
+                            }
+                        }
+                        .description {
+                            font-size: clamp(0.5rem, 3vw, 1rem);
+                            transition: color 0.3s;
+                            &:hover {
+                                color: yellow;
+                            }
                         }
                     }
                 }
-            }
-            &:hover {
-                clip-path: circle(70%);
-                background: linear-gradient(to right, #3a6073, #3a7bd5);
-            }
-        }
-        .card_control {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translate(-50%);
-            z-index: 4;
-            input[type=radio] {
-                margin: 0 10px;
-                cursor: pointer;
-                z-index: 4;
-            }
-            input[type='radio']:after {
-                width: 15px;
-                height: 15px;
-                border-radius: 15px;
-                top: -2px;
-                left: -1px;
-                position: relative;
-                background-color: #d1d3d1;
-                content: '';
-                display: inline-block;
-                visibility: visible;
-                border: 1px solid white;
-                z-index: 4;
-            }
-            input[type='radio']:checked:after {
-                width: 15px;
-                height: 15px;
-                border-radius: 15px;
-                top: -2px;
-                left: -1px;
-                position: relative;
-                background-color: yellow;
-                content: '';
-                display: inline-block;
-                visibility: visible;
-                border: 1px solid white;
-                z-index: 4;
+                &:hover {
+                    clip-path: circle(70%);
+                    background: linear-gradient(to right, #3a6073, #3a7bd5);
+                }
             }
         }
     }

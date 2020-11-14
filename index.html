@@ -14,7 +14,7 @@
     <!--?Stylesheet-->
     <link type="text/css" rel="stylesheet" href="SASS/style.css">
     <link type="text/css" rel="stylesheet" href="SASS/responsive.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
@@ -65,7 +65,7 @@
             <p>STUDENT</p>
             <p>CHAPTER</p>
         </div>
-
+        <div class="downArrow" id="downArrow"><i class="fas fa-chevron-down"></i></div>
     </section>
 
     <section class="home-about" id="about_parent">
@@ -104,7 +104,7 @@
             <i class="fas fa-times " id="close_modal"></i>
             <img src="IMG/orientation.jpg">
         </div>
-        <div class="swiper-container">
+        <div class="swiper-container_events">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -145,15 +145,13 @@
                     </div>
                     <img src="IMG/avatar.png">
                 </div>
-
-                ...
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
 
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev button_event" style="color:white"></div>
-            <div class="swiper-button-next button_event" style="color:white"></div>
+            <div class="swiper-button-prev button_event"></div>
+            <div class="swiper-button-next button_event"></div>
 
             <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
@@ -187,53 +185,140 @@
     <section class="team" id="team">
         <div id="cursor_circle_team"></div>
         <h1><span>O</span><span>U</span><span>R</span> <span>T</span><span>E</span><span>A</span><span>M</span></h1>
-        <div class="card_container">
-            <div class="team_image"></div>
-            <div class="container">
-                <div class="card">
-                    <div class="image-container">
-                        <img class="image" src="IMG/Team/potter.jpg" id="card_image_one">
-                    </div>
-                    <div class="name" id="name_card_one">
-                        Swapnil Duggal
-                    </div>
-                    <div class="card-info">
-                        <div class="designatory" id="card_designation_one">
-                            General Secretary
+        <div class="swiper-container_team">
+            <!-- Additional required wrapper -->
+            <div class="teamIMG"></div>
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Swapnil Duggal
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    General Secretary
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
                         </div>
-                        <div class="description" id="card_about_one">
-                            The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
+                    </div>
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Amiti Johar
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    General Secretary
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="card">
-                    <div class="image-container">
-                        <img class="image" src="IMG/Team/weasley.jpg" id="card_image_two">
-                    </div>
-                    <div class="name" id="name_card_two">
-                        Amiti Johar
-                    </div>
-                    <div class="card-info">
-                        <div class="designatory" id="card_designation_two">
-                            General Secretary
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Shefali Dutta
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    Convener
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
                         </div>
-                        <div class="description" id="card_about_two">
-                            The Boy who Lived. The Boy who cheated death twice. The master of Deathly Hallows.
+                    </div>
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Animesh Bisen
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    Finance Secretary
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Piyush Sethi
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    Joint Secretary
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="card">
+                            <div class="image-container">
+                                <img class="image" src="IMG/Team/profile.png">
+                            </div>
+                            <div class="name">
+                                Rushabh Kanodia
+                            </div>
+                            <div class="card-info">
+                                <div class="designatory">
+                                    Joint Secretary
+                                </div>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ut cupiditate illum praesentium sdf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="card_control" id="card_control">
-                <!--?Giving the same name to the radios enables only one to be seleced at a time-->
-                <input type="radio" id="card_list_one" name="us">
-                <input type="radio" id="card_list_two" name="us">
-                <input type="radio" id="card_list_three" name="us">
-            </div>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev button_event"></div>
+            <div class="swiper-button-next button_event"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
         </div>
-
     </section>
 
 
@@ -291,11 +376,30 @@
         </div>
     </section>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <script>
-        var mySwiper = new Swiper('.swiper-container', {
+        var mySwiper1 = new Swiper('.swiper-container_events', {
+                // Optional parameters
+                loop: true,
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            })
+            //?Lax setup
+
+        var mySwiper2 = new Swiper('.swiper-container_team', {
             // Optional parameters
             loop: true,
             // If we need pagination
@@ -313,7 +417,6 @@
             },
         })
 
-        //?Lax setup
         window.onload = function() {
             setTimeout(() => {
                 //?remove the loading screen
@@ -327,32 +430,37 @@
                         large: 765
                     }
                 }) // init
-            radio1.checked = true;
-            render_card[0];
+
+
             const updateLax = () => {
                 lax.update(window.scrollY)
                 window.requestAnimationFrame(updateLax)
             }
-
             window.requestAnimationFrame(updateLax)
         }
 
         document.getElementById("modal").addEventListener('click', () => {
-
             document.getElementById("enlarged_image").style.display = "flex";
             document.getElementById("enlarged_image").scrollIntoView();
             document.body.style.overflow = 'hidden';
         })
+
         document.getElementById("modal").addEventListener('touch', () => {
             document.getElementById("enlarged_image").style.display = "flex";
         })
+
         document.getElementById("close_modal").addEventListener('click', () => {
             document.getElementById("enlarged_image").style.display = "none";
             document.body.style.overflowX = 'hidden';
             document.body.style.overflowY = 'visible';
         })
+
         document.getElementById("close_modal").addEventListener('touch', () => {
             document.getElementById("enlarged_image").style.display = "none";
+        })
+
+        document.getElementById('downArrow').addEventListener('click', () => {
+            document.getElementById("events").scrollIntoView();
         })
     </script>
     <script src="TS/app.js"></script>
