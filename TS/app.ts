@@ -227,35 +227,30 @@ document.getElementById('team').addEventListener('mouseleave', e => {
 
 const prevBtn = document.getElementById('prevEvents_prevButton');
 const nextBtn = document.getElementById('prevEvents_nextButton');
-
+let position = 0;
+const noOfImages = document.querySelectorAll('.pastEvent_image').length;
+const images = document.getElementById('pastEvents_allimages');
 //?Checks if prev button is not empty then adds the event listener of click
 
-function matrixToArray(str) {
-    return str.match(/(-?[0-9\.]+)/g);
-}
-let position = 0;
+
 const moveImageBy = (window.innerWidth * 75 / 100) * 70 / 100;
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-        const images = document.getElementById('pastEvents_allimages');
         position += moveImageBy;
         if (position > 0) {
-            position = -7 * moveImageBy;
+            position = -1 * (noOfImages - 1) * moveImageBy;
         }
         images.style.transform = `translateX(${position}px)`;
-        console.log(position);
     });
 }
 
 //?Checks if next button is not empty then adds the event listener of click
 if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-        const images = document.getElementById('pastEvents_allimages');
         position -= moveImageBy;
-        if (position < -7 * moveImageBy) {
+        if (position < -1 * (noOfImages - 1) * moveImageBy) {
             position = 0;
         }
         images.style.transform = `translateX(${position}px)`;
-        console.log(position);
     });
 }
