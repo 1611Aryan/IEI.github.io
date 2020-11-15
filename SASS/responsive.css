@@ -59,6 +59,10 @@
     -webkit-transform: translate(0);
             transform: translate(0);
   }
+  .home #hero-container {
+    -webkit-perspective: 0px;
+            perspective: 0px;
+  }
   .home #hero-container .img {
     display: block;
     position: absolute;
@@ -144,7 +148,7 @@
   }
   .pastEvents .pastEvents__container .image-carousel {
     width: 95%;
-    height: 45%;
+    height: 40%;
   }
   .pastEvents .pastEvents__container .image-carousel button:focus {
     outline: none;

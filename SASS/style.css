@@ -802,7 +802,7 @@ nav ul li a {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 75%;
-  height: 90%;
+  height: 100%;
 }
 
 .pastEvents .pastEvents__container .top-heading,
@@ -840,46 +840,54 @@ nav ul li a {
 .pastEvents .pastEvents__container .image-carousel {
   position: relative;
   width: 70%;
+  height: 65%;
   overflow: hidden;
   z-index: 6;
   cursor: default;
 }
 
-.pastEvents .pastEvents__container .image-carousel img {
-  width: 100%;
+.pastEvents .pastEvents__container .image-carousel .pastEvents_allimages {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  width: calc(8*100%);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.pastEvents .pastEvents__container .image-carousel button {
+.pastEvents .pastEvents__container .image-carousel .pastEvents_allimages .pastEvent_image {
+  width: 100%;
+  height: 100%;
+}
+
+.pastEvents .pastEvents__container .image-carousel .pastEvents_allimages .pastEvent_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pastEvents .pastEvents__container .image-carousel i {
   position: absolute;
   top: 50%;
-  border: none;
-  padding: 0.8rem 1.1rem;
-  background: transparent;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  cursor: pointer;
-  outline: none;
-}
-
-.pastEvents .pastEvents__container .image-carousel button i {
   font-size: clamp(2rem, 3vw, 3rem);
   color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
-.pastEvents .pastEvents__container .image-carousel button:focus {
-  outline: none;
+.pastEvents .pastEvents__container .image-carousel i:nth-of-type(1) {
+  left: 1rem;
 }
 
-.pastEvents .pastEvents__container .image-carousel button:nth-of-type(1) {
-  left: 0.5rem;
+.pastEvents .pastEvents__container .image-carousel i:nth-of-type(2) {
+  right: 1rem;
 }
 
-.pastEvents .pastEvents__container .image-carousel button:nth-of-type(2) {
-  right: 0.5rem;
-}
-
-.pastEvents .pastEvents__container .image-carousel button:hover i {
-  color: rgba(255, 255, 79, 0.6);
+.pastEvents .pastEvents__container .image-carousel i:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .revealio {
@@ -985,13 +993,13 @@ nav ul li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../IMG/team3.jpg);
+  background-image: url(../IMG/team2.jpg);
   background-size: cover;
   background-position: center center;
   border-radius: 25px 25px 0 0;
   z-index: -1;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
+  -webkit-filter: blur(5px) brightness(70%) saturate(50%);
+          filter: blur(5px) brightness(70%) saturate(50%);
 }
 
 .team .swiper-container_team .swiper-slide {

@@ -8,19 +8,6 @@ const navHome = document.getElementById('nav-element__home');
 const navEvent = document.getElementById('nav-element__events');
 const navTeam = document.getElementById('nav-element__team');
 const navContact = document.getElementById('nav-element__contact');
-const prevBtn = document.getElementById('previous_btn');
-const nextBtn = document.getElementById('next_btn');
-const eventImage = document.getElementById('eventImage');
-const imgArray = [
-    'IMG/Events/1.jpg',
-    'IMG/Events/2.jpg',
-    'IMG/Events/3.jpg',
-    'IMG/Events/4.jpg',
-    'IMG/Events/5.jpg',
-    'IMG/Events/6.jpg',
-    'IMG/Events/7.jpg',
-    'IMG/Events/8.jpg',
-];
 
 //?Nav Management
 const nav_close = document.getElementById('close');
@@ -238,81 +225,37 @@ document.getElementById('team').addEventListener('mouseleave', e => {
 })
 //?
 
-//?Counters Don't Mess
-let i = 1;
-let j = 0;
+const prevBtn = document.getElementById('prevEvents_prevButton');
+const nextBtn = document.getElementById('prevEvents_nextButton');
+
 //?Checks if prev button is not empty then adds the event listener of click
+
+function matrixToArray(str) {
+    return str.match(/(-?[0-9\.]+)/g);
+}
+let position = 0;
+const moveImageBy = (window.innerWidth * 75 / 100) * 70 / 100;
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-        i--;
-        if (j == 0) {
-            i = 7;
-            j++;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
+        const images = document.getElementById('pastEvents_allimages');
+        position += moveImageBy;
+        if (position > 0) {
+            position = -7 * moveImageBy;
         }
-        else if (i < 0) {
-            i = 7;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-        }
-
-        else {
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-        }
-
-    });
-
-    prevBtn.addEventListener('touch', () => {
-        i--;
-        if (j == 0) {
-            i = 7;
-            j++;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-        }
-        else if (i < 0) {
-            i = 7;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-        }
-        else {
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-        }
+        images.style.transform = `translateX(${position}px)`;
+        console.log(position);
     });
 }
+
 //?Checks if next button is not empty then adds the event listener of click
 if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-        i++;
-        if (j == 0) {
-            i = 1;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
+        const images = document.getElementById('pastEvents_allimages');
+        position -= moveImageBy;
+        if (position < -7 * moveImageBy) {
+            position = 0;
         }
-        else if (i > 7) {
-            i = 0;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
-        }
-        else {
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
-        }
-    });
-
-    nextBtn.addEventListener('touch', () => {
-        i++;
-        if (j == 0) {
-            i = 1;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
-        }
-        else if (i > 7) {
-            i = 0;
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
-        }
-        else {
-            (<HTMLImageElement>eventImage).src = imgArray[i];
-            j++;
-        }
+        images.style.transform = `translateX(${position}px)`;
+        console.log(position);
     });
 }
-

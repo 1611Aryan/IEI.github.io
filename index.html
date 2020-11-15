@@ -60,10 +60,10 @@
             <img id="hero" src=" IMG/bluerods.jpg ">
         </div>
         <div class="name">
-            <p>IEI</p>
-            <p>THAPAR</p>
-            <p>STUDENT</p>
-            <p>CHAPTER</p>
+            <p class="enterTitle">IEI</p>
+            <p class="enterTitle">THAPAR</p>
+            <p class="enterTitle">STUDENT</p>
+            <p class="enterTitle">CHAPTER</p>
         </div>
         <div class="downArrow" id="downArrow"><i class="fas fa-chevron-down"></i></div>
     </section>
@@ -170,13 +170,34 @@
             </div>
             <div class=" event-heading ">Project Showcase and Motivational Talks</div>
             <div class="image-carousel " id="cursor_image_carousel">
-                <img id="eventImage" src="IMG/Events/1.jpg ">
-                <button id="previous_btn">
-                    <i class="fas fa-chevron-left "></i>
-                </button>
-                <button id="next_btn">
-                    <i class="fas fa-chevron-right "></i>
-                </button>
+                <div class="pastEvents_allimages" id="pastEvents_allimages">
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/1.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/2.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/3.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/4.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/5.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/6.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/7.jpg">
+                    </div>
+                    <div class="pastEvent_image">
+                        <img src="IMG/Events/8.jpg">
+                    </div>
+                </div>
+                <i class="fas fa-angle-left" id="prevEvents_prevButton"></i>
+                <i class="fas fa-angle-right" id="prevEvents_nextButton"></i>
             </div>
         </div>
     </section>
@@ -418,11 +439,18 @@
         })
 
         window.onload = function() {
+            const enterTitle = document.querySelectorAll('.enterTitle');
+            enterTitle.forEach((element) => {
+                element.style.webkitAnimationPlayState = "paused";
+            })
             setTimeout(() => {
                 //?remove the loading screen
                 document.getElementById('loading').style.display = 'none';
                 document.body.style.overflowX = 'hidden';
                 document.body.style.overflowY = 'visible';
+                enterTitle.forEach((element) => {
+                    element.style.webkitAnimationPlayState = "running";
+                })
             }, 1000);
             lax.setup({
                     breakpoints: {
@@ -438,6 +466,7 @@
             }
             window.requestAnimationFrame(updateLax)
         }
+
 
         document.getElementById("modal").addEventListener('click', () => {
             document.getElementById("enlarged_image").style.display = "flex";

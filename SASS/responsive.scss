@@ -60,6 +60,7 @@
         }
         .home {
             #hero-container {
+                perspective: 0px;
                 .img {
                     display: block;
                     position: absolute;
@@ -141,7 +142,7 @@
                 }
                 .image-carousel {
                     width: 95%;
-                    height: 45%;
+                    height: 40%;
                     button {
                         &:focus {
                             outline: none;
