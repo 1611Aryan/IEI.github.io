@@ -846,6 +846,7 @@ nav {
         background: url(../IMG/keyboard.jpg);
         background-size: cover;
         background-attachment: fixed;
+        filter: brightness(70%) saturate(70%);
         z-index: -1;
     }
     .contact_contrast {

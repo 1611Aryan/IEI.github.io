@@ -1271,6 +1271,8 @@ nav ul li a {
   background: url(../IMG/keyboard.jpg);
   background-size: cover;
   background-attachment: fixed;
+  -webkit-filter: brightness(70%) saturate(70%);
+          filter: brightness(70%) saturate(70%);
   z-index: -1;
 }
 
