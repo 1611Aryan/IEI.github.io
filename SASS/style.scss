@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: height 6s ease-out;
+    transition: height 100s ease-out;
 }
 
 body {
@@ -12,7 +12,6 @@ body {
     user-select: none;
     cursor: none;
     -webkit-overflow-scrolling: touch;
-    transition: height 6s ease-out;
 }
 
 ::-webkit-scrollbar {
