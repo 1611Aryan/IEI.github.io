@@ -230,27 +230,68 @@ const nextBtn = document.getElementById('prevEvents_nextButton');
 let position = 0;
 const noOfImages = document.querySelectorAll('.pastEvent_image').length;
 const images = document.getElementById('pastEvents_allimages');
+let moveImageBy = 0;
+
+const imageRight = () => {
+    position -= moveImageBy;
+    if (position < -1 * (noOfImages - 1) * moveImageBy) {
+        position = 0;
+    }
+    images.style.transform = `translateX(${position}px)`;
+}
+
+const imageLeft = () => {
+    position += moveImageBy;
+    if (position > 0) {
+        position = -1 * (noOfImages - 1) * moveImageBy;
+    }
+    images.style.transform = `translateX(${position}px)`;
+}
+
+function handleGesture() {
+    if (touchendX < touchstartX) {
+        imageRight();
+    }
+    if (touchendX > touchstartX) {
+        imageLeft();
+    }
+}
 //?Checks if prev button is not empty then adds the event listener of click
 
+//?Adding responsiveness
+if (window.innerWidth > 765) {
+    moveImageBy = (window.innerWidth * 75 / 100) * 70 / 100;
+}
+else {
+    moveImageBy = (window.innerWidth * 90 / 100) * 95 / 100;
+}
 
-const moveImageBy = (window.innerWidth * 75 / 100) * 70 / 100;
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-        position += moveImageBy;
-        if (position > 0) {
-            position = -1 * (noOfImages - 1) * moveImageBy;
-        }
-        images.style.transform = `translateX(${position}px)`;
+        imageLeft();
     });
 }
 
 //?Checks if next button is not empty then adds the event listener of click
 if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-        position -= moveImageBy;
-        if (position < -1 * (noOfImages - 1) * moveImageBy) {
-            position = 0;
-        }
-        images.style.transform = `translateX(${position}px)`;
+        imageRight();
     });
 }
+
+let touchstartX = 0;
+let touchstartY = 0;
+let touchendX = 0;
+let touchendY = 0;
+
+images.addEventListener('touchstart', function (event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+images.addEventListener('touchend', function (event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+}, false);
+

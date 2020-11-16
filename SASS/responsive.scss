@@ -68,10 +68,19 @@
                     left: 0;
                     width: 200%;
                     height: 200%;
-                    background: url('../IMG/bluerods.jpg');
-                    background-attachment: fixed;
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 200%;
+                        height: 200%;
+                        background: url('../IMG/bluerods.jpg');
+                        background-attachment: fixed;
+                        background-repeat: no-repeat;
+                        background-size: 250vw calc(var(--vh, 1vh) * 200);
+                        ;
+                    }
                 }
                 img {
                     display: none;
@@ -84,6 +93,13 @@
             }
         }
         .home-about {
+            .svgGears {
+                width: 20%;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                transform: rotate(100deg);
+            }
             .about {
                 width: 85%;
             }
@@ -163,6 +179,18 @@
                     width: 50%;
                 }
             }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: url(../IMG/keyboard.jpg);
+                background-size: 200vw calc(var(--vh, 1vh) * 100);
+                background-attachment: fixed;
+                z-index: -1;
+            }
         }
         .team {
             width: 100vw;
@@ -208,6 +236,7 @@
                                 top: 5%;
                                 left: 50%;
                                 text-align: center;
+                                animation: none;
                             }
                             .card-info {
                                 position: absolute;
@@ -297,7 +326,6 @@
                     font-size: clamp(1.3rem, 3vw, 2rem);
                 }
                 .top-heading {
-                    ;
                     font-size: clamp(1.3rem, 3vw, 1.5rem);
                 }
             }

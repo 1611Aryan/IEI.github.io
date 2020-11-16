@@ -6,10 +6,13 @@
 }
 
 html {
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 
 body {
+  height: 100%;
+  position: fixed;
   background-color: #456475;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
@@ -17,8 +20,8 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  height: 550vh;
   cursor: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 ::-webkit-scrollbar {
@@ -38,7 +41,7 @@ body {
 
 .loading {
   background: #2e2e2e;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,6 +56,7 @@ body {
   top: 0;
   left: 0;
   z-index: 9999;
+  cursor: default;
 }
 
 .loading section {
@@ -117,7 +121,7 @@ body {
 nav {
   z-index: 9;
   width: 5vw;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -360,7 +364,7 @@ nav ul li a {
 }
 
 .home-about {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #4f6475;
   display: -webkit-box;
@@ -395,6 +399,44 @@ nav ul li a {
           animation: vibe 10s linear infinite;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
+}
+
+.home-about .svgGears {
+  width: 15%;
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+.home-about .svgGears #gears1 path {
+  fill: rgba(255, 255, 255, 0.9);
+}
+
+.home-about .svgGears #gears1 #Vector {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+  -webkit-animation: gear 7s linear infinite;
+          animation: gear 7s linear infinite;
+}
+
+.home-about .svgGears #gears1 #Vector_2 {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+  -webkit-animation: gear 7s linear infinite;
+          animation: gear 7s linear infinite;
+  animation-direction: reverse;
+}
+
+.home-about .svgGears:hover #gears1 #Vector {
+  animation-direction: reverse;
+}
+
+.home-about .svgGears:hover #gears1 #Vector_2 {
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
 
 .home-about .about {
@@ -453,6 +495,20 @@ nav ul li a {
   font-weight: 600;
   color: white;
   z-index: 2;
+}
+
+@-webkit-keyframes gear {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes gear {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @-webkit-keyframes vibe {
@@ -773,18 +829,21 @@ nav ul li a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url(../IMG/nightRoad.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0.05;
 }
 
-.pastEvents .road-image img {
-  width: 100%;
-  opacity: 0.1;
-  height: 100%;
+.pastEvents .road-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../IMG/nightRoad.jpg);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .pastEvents .pastEvents__container {
@@ -866,6 +925,10 @@ nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .pastEvents .pastEvents__container .image-carousel i {
@@ -1072,14 +1135,21 @@ nav ul li a {
   top: 5%;
   left: 10px;
   text-align: center;
+  -webkit-animation: text-wobble 1.5s linear infinite;
+          animation: text-wobble 1.5s linear infinite;
+}
+
+.team .swiper-container_team .swiper-slide .container .card .name a {
+  text-decoration: none;
   font-weight: 500;
   font-size: clamp(0.8rem, 3vw, 2rem);
   color: white;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
-.team .swiper-container_team .swiper-slide .container .card .name:hover {
+.team .swiper-container_team .swiper-slide .container .card .name a:hover {
   color: yellow;
 }
 
@@ -1120,6 +1190,60 @@ nav ul li a {
   background: linear-gradient(to right, #3a6073, #3a7bd5);
 }
 
+@-webkit-keyframes text-wobble {
+  0% {
+    -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+  }
+  5% {
+    -webkit-transform: skewX(25deg);
+            transform: skewX(25deg);
+  }
+  10% {
+    -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+  }
+  15% {
+    -webkit-transform: skewX(25deg);
+            transform: skewX(25deg);
+  }
+  20% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
+@keyframes text-wobble {
+  0% {
+    -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+  }
+  5% {
+    -webkit-transform: skewX(25deg);
+            transform: skewX(25deg);
+  }
+  10% {
+    -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+  }
+  15% {
+    -webkit-transform: skewX(25deg);
+            transform: skewX(25deg);
+  }
+  20% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
 .contact_us {
   width: 100vw;
   height: 100vh;
@@ -1134,15 +1258,25 @@ nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(../IMG/keyboard.jpg);
-  background-size: cover;
-  background-attachment: fixed;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
   cursor: default;
+}
+
+.contact_us::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../IMG/keyboard.jpg);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 .contact_us .contact_contrast {
