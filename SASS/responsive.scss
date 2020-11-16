@@ -134,7 +134,7 @@
         .pastEvents {
             .road-image {
                 &::after {
-                    background-attachment: scroll;
+                    background-attachment: fixed;
                 }
             }
             .pastEvents__container {

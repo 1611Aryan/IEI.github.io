@@ -137,7 +137,7 @@
             filter: blur(0px);
   }
   .pastEvents .road-image::after {
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
   .pastEvents .pastEvents__container {
     -ms-flex-pack: distribute;
