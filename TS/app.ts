@@ -70,6 +70,7 @@ const order_nav = (i: string, j: string, k: string, l: string) => {
 }
 
 window.addEventListener('scroll', () => {
+    console.log(pageHeight, pageYOffset);
     if (pageYOffset < 1.7 * pageHeight) {
         order_nav('1', '2', '3', '4');
         if (pageYOffset > 0.45 * pageHeight) {

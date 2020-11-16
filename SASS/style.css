@@ -6,13 +6,10 @@
 }
 
 html {
-  overflow: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  height: 100%;
-  position: fixed;
   background-color: #456475;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
@@ -41,7 +38,7 @@ body {
 
 .loading {
   background: #2e2e2e;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +118,7 @@ body {
 nav {
   z-index: 9;
   width: 5vw;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
