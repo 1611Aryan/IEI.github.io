@@ -3,8 +3,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: height 999s ease-out, background-size 999s ease-out;
-  transition: height 999s ease-out, background-size 999s ease-out;
+  -webkit-transition: height 999s ease-out, background-size 999s ease-out, background-position 999s ease-out;
+  transition: height 999s ease-out, background-size 999s ease-out, background-position 999s ease-out;
 }
 
 body {
