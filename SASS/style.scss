@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: height 100s ease-out;
+    transition: height 999s ease-out, background-size 999s ease-out;
 }
 
 body {
@@ -855,7 +855,8 @@ nav {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(64, 91, 114, 0.8);
+        //background: rgba(64, 91, 114, 0.8);
+        background: rgba(54, 77, 95, 0.8);
     }
     .contact_message {
         position: absolute;
