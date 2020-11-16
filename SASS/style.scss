@@ -4,16 +4,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: rgb(69, 100, 117);
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
     user-select: none;
-    //height: 550vh;
     cursor: none;
     -webkit-overflow-scrolling: touch;
 }
