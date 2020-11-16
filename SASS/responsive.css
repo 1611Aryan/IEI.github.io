@@ -101,9 +101,6 @@
   .home-about .about {
     width: 85%;
   }
-  .events {
-    overflow: hidden !important;
-  }
   .events img {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
@@ -190,7 +187,7 @@
     background: url(../IMG/keyboard.jpg);
     background-size: cover;
     z-index: -1;
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
   .team {
     width: 100vw;

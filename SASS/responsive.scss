@@ -103,7 +103,6 @@
             }
         }
         .events {
-            overflow: hidden !important;
             img {
                 transform: scale(1.5);
             }
@@ -192,7 +191,7 @@
                 background: url(../IMG/keyboard.jpg);
                 background-size: cover;
                 z-index: -1;
-                background-attachment: scroll;
+                background-attachment: fixed;
             }
         }
         .team {

@@ -11,6 +11,7 @@ body {
     user-select: none;
     cursor: none;
     -webkit-overflow-scrolling: touch;
+    transition: height 0.66s ease-out;
 }
 
 ::-webkit-scrollbar {
@@ -359,7 +360,6 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1;
     overflow: hidden;
     cursor: none;
     #cursor_circle_events {
@@ -433,8 +433,8 @@ nav {
                 background: url(../IMG/desktop.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-attachment: scroll;
                 filter: blur(1px);
-                // background-position: -100%;
                 opacity: 0.5;
                 &::after {
                     content: "";

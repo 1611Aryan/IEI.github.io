@@ -15,6 +15,8 @@ body {
           user-select: none;
   cursor: none;
   -webkit-overflow-scrolling: touch;
+  -webkit-transition: height 0.66s ease-out;
+  transition: height 0.66s ease-out;
 }
 
 ::-webkit-scrollbar {
@@ -536,7 +538,6 @@ nav ul li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 1;
   overflow: hidden;
   cursor: none;
 }
@@ -635,6 +636,7 @@ nav ul li a {
   background: url(../IMG/desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
   -webkit-filter: blur(1px);
           filter: blur(1px);
   opacity: 0.5;
