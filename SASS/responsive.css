@@ -183,11 +183,12 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background: url(../IMG/keyboard.jpg);
-    background-size: cover;
+    background-size: 150% 150%;
     z-index: -1;
     background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   .team {
     width: 100vw;
