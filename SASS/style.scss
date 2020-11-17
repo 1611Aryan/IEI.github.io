@@ -41,7 +41,7 @@ body {
     left: 0;
     z-index: 9999;
     cursor: default;
-    section {
+    .stuff {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -341,7 +341,7 @@ nav {
 
 @keyframes gear {
     to {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 
@@ -424,16 +424,14 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
             .poster {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100vw;
                 height: 150vh;
-                background: url(../IMG/desktop.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: scroll;
+                object-fit: cover;
                 filter: blur(1px);
                 opacity: 0.5;
                 &::after {
@@ -447,9 +445,10 @@ nav {
                 }
             }
             .orientation_content {
+                margin-top: 5rem;
                 background: rgba(0, 128, 128, 0.85);
                 width: 40%;
-                height: 60%;
+                height: 65%;
                 padding: 2rem;
                 display: flex;
                 justify-content: center;
@@ -479,7 +478,7 @@ nav {
                 }
                 .modal {
                     width: 45%;
-                    height: 23%;
+                    height: 25%;
                     border: 2.5px solid black;
                     margin-top: 3rem;
                     overflow: hidden;
@@ -489,7 +488,6 @@ nav {
                         filter: blur(0.5px);
                         width: 100%;
                         height: 100%;
-                        image-rendering: pixelated;
                         background: url(../IMG/orientation.jpg);
                         background-size: cover;
                         background-repeat: no-repeat;
@@ -591,17 +589,17 @@ nav {
             z-index: 6;
         }
         .top-heading {
+            align-self: flex-start;
+            margin-left: 15%;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
             color: rgb(251, 251, 0);
             display: flex;
             z-index: 3;
-            .nowYouSeeMe {
-                margin-left: 0.5rem;
-                border-left: 0.5rem solid rgb(251, 251, 0);
-                width: 60%;
-                height: 100%;
-                background: rgb(19, 39, 49);
-                transform: translateX(-41%);
+            width: 0%;
+            overflow: hidden;
+            border-right: 8px solid rgb(251, 251, 0);
+            span {
+                white-space: nowrap;
             }
         }
         .event-heading {
@@ -667,7 +665,7 @@ nav {
 
 @keyframes alohomora {
     to {
-        transform: translateX(0px);
+        width: 20%;
     }
 }
 

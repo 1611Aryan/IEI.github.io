@@ -80,7 +80,7 @@ window.addEventListener('scroll', () => {
     if (pageYOffset >= 1.7 * pageHeight) {
         order_nav('2', '1', '3', '4');
         if (pageYOffset >= 2.9 * pageHeight) {
-            document.querySelector('.nowYouSeeMe').classList.add('alohomora');
+            document.querySelector('.top-heading').classList.add('alohomora');
         }
         if (pageYOffset >= 4 * pageHeight) {
             order_nav('2', '3', '1', '4');
@@ -91,6 +91,25 @@ window.addEventListener('scroll', () => {
     }
 });
 //?
+
+/*
+const sections = document.querySelectorAll('section');
+const options = {
+    rootMargin: '250px'
+}
+const section_observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        console.log(entry.target.classList[0]);
+        if (entry.target.classList[0] == 'events') {
+            alert('Hi');
+        }
+    })
+
+}, options);
+sections.forEach((section) => {
+    section_observer.observe(section);
+})
+*/
 
 //?home image transition
 const hero = document.getElementById('hero');

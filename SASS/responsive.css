@@ -2,7 +2,7 @@
   body {
     max-width: 100vw;
   }
-  .loading section {
+  .loading .stuff {
     width: 50vw;
     height: 50vw;
   }
@@ -123,9 +123,6 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .events .swiper-container_events .slide_one .poster {
-    background: url(../IMG/phone.jpg);
-  }
   .events .swiper-container_events .slide_one .orientation_content {
     width: 80% !important;
     height: 55%;
@@ -136,6 +133,10 @@
     height: 24%;
     -webkit-filter: blur(0px);
             filter: blur(0px);
+  }
+  .events .swiper-container_events .slide_two img {
+    width: 140%;
+    height: auto;
   }
   .pastEvents .road-image::after {
     background-attachment: fixed;
@@ -153,14 +154,10 @@
   .pastEvents .pastEvents__container .event-heading {
     margin-top: -25%;
   }
-  .pastEvents .pastEvents__container .top-heading .nowYouSeeMe {
-    margin-left: 0.5rem;
-    border-left: 0.5rem solid #fbfb00;
-    width: 60%;
-    height: 100%;
-    background: #132731;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+  .pastEvents .pastEvents__container .top-heading {
+    margin-left: 7.5%;
+    width: 0%;
+    border-right: 6px solid #fbfb00;
   }
   .pastEvents .pastEvents__container .image-carousel {
     width: 95%;
@@ -174,6 +171,16 @@
   }
   .pastEvents .pastEvents__container .image-carousel button:nth-of-type(2) {
     right: 0.1rem;
+  }
+  @-webkit-keyframes alohomora {
+    to {
+      width: 48%;
+    }
+  }
+  @keyframes alohomora {
+    to {
+      width: 48%;
+    }
   }
   .contact_us .footer .column_two {
     width: 50%;

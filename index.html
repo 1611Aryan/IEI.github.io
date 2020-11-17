@@ -21,17 +21,16 @@
 
 <body>
     <div class="loading" id="loading">
-        <section class="stuff">
+        <div class="stuff">
             <img src="IMG/logo.png">
             <div class="fluid_loading">
             </div>
-        </section>
+        </div>
     </div>
     <div id="nav_manager">
         <i class="fas fa-bars menu" id="open"></i>
         <i class="fas fa-times menu" id="close"></i>
     </div>
-
     <nav id="nav">
         <img src="IMG/logo.png" alt="Logo">
         <ul>
@@ -49,7 +48,6 @@
             </li>
         </ul>
     </nav>
-
 
     <a name="home"></a>
     <section class="home" id="home">
@@ -123,14 +121,14 @@
         <div class="contrast2"></div>
         <div class="enlarged_image" id="enlarged_image">
             <i class="fas fa-times " id="close_modal"></i>
-            <img src="IMG/orientation.jpg">
+            <img loading="lazy" src="IMG/orientation.jpg">
         </div>
         <div class="swiper-container_events">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide slide_one">
-                    <div class="poster"></div>
+                    <img loading="lazy" class="poster" src="IMG/desktop.jpg" srcset="IMG/phone.jpg 50w, IMG/desktop.jpg">
                     <div class="orientation_content">
                         <h3>
                             <span>O</span>
@@ -164,7 +162,7 @@
                     <div class="highlightedText  lax">
                         <h3>Recruiting SuperSoon!</h3><span>Opening for First Year and Second Year</span>
                     </div>
-                    <img src="IMG/avatar.png">
+                    <img loading="lazy" src="IMG/avatar.png">
                 </div>
             </div>
             <!-- If we need pagination -->
@@ -187,34 +185,34 @@
         <div class="road-image"></div>
         <div class="pastEvents__container">
             <div class="top-heading"><span>Past Events</span>
-                <div class="nowYouSeeMe"></div>
+
             </div>
             <div class=" event-heading ">Project Showcase and Motivational Talks</div>
             <div class="image-carousel " id="cursor_image_carousel">
                 <div class="pastEvents_allimages" id="pastEvents_allimages">
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/1.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/1.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/2.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/2.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/3.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/3.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/4.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/4.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/5.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/5.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/6.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/6.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/7.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/7.jpg">
                     </div>
                     <div class="pastEvent_image">
-                        <img draggable="false" src="IMG/Events/8.jpg">
+                        <img loading="lazy" draggable="false" src="IMG/Events/8.jpg">
                     </div>
                 </div>
                 <i class="fas fa-angle-left" id="prevEvents_prevButton"></i>
@@ -237,7 +235,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/swapnilduggal/?hl=en" target="_blank">Swapnil
@@ -256,7 +254,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/amiti.j2000/" target="_blank">Amiti Johar</a>
@@ -276,7 +274,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/_shefality_/" target="_blank">Shefali Dutta</a>
@@ -294,7 +292,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/bisen_animesh/?hl=en" target="_blank">Animesh
@@ -315,7 +313,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/p_sethi_/" target="_blank">Piyush Sethi</a>
@@ -333,7 +331,7 @@
                     <div class="container">
                         <div class="card">
                             <div class="image-container">
-                                <img class="image" src="IMG/Team/profile.png">
+                                <img loading="lazy" class="image" src="IMG/Team/profile.png">
                             </div>
                             <div class="name">
                                 <a href="https://www.instagram.com/kanodiarushab/?hl=en" target="_blank">Rushabh

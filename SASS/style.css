@@ -54,7 +54,7 @@ body {
   cursor: default;
 }
 
-.loading section {
+.loading .stuff {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,15 +494,15 @@ nav ul li a {
 
 @-webkit-keyframes gear {
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 @keyframes gear {
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
@@ -625,6 +625,7 @@ nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .events .swiper-container_events .slide_one .poster {
@@ -633,10 +634,8 @@ nav ul li a {
   left: 0;
   width: 100vw;
   height: 150vh;
-  background: url(../IMG/desktop.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-filter: blur(1px);
           filter: blur(1px);
   opacity: 0.5;
@@ -653,9 +652,10 @@ nav ul li a {
 }
 
 .events .swiper-container_events .slide_one .orientation_content {
+  margin-top: 5rem;
   background: rgba(0, 128, 128, 0.85);
   width: 40%;
-  height: 60%;
+  height: 65%;
   padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -703,7 +703,7 @@ nav ul li a {
 
 .events .swiper-container_events .slide_one .orientation_content .modal {
   width: 45%;
-  height: 23%;
+  height: 25%;
   border: 2.5px solid black;
   margin-top: 3rem;
   overflow: hidden;
@@ -716,11 +716,6 @@ nav ul li a {
           filter: blur(0.5px);
   width: 100%;
   height: 100%;
-  -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: -o-pixelated;
-      image-rendering: pixelated;
   background: url(../IMG/orientation.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -869,22 +864,22 @@ nav ul li a {
 }
 
 .pastEvents .pastEvents__container .top-heading {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 15%;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: #fbfb00;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   z-index: 3;
+  width: 0%;
+  overflow: hidden;
+  border-right: 8px solid #fbfb00;
 }
 
-.pastEvents .pastEvents__container .top-heading .nowYouSeeMe {
-  margin-left: 0.5rem;
-  border-left: 0.5rem solid #fbfb00;
-  width: 60%;
-  height: 100%;
-  background: #132731;
-  -webkit-transform: translateX(-41%);
-          transform: translateX(-41%);
+.pastEvents .pastEvents__container .top-heading span {
+  white-space: nowrap;
 }
 
 .pastEvents .pastEvents__container .event-heading {
@@ -974,15 +969,13 @@ nav ul li a {
 
 @-webkit-keyframes alohomora {
   to {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    width: 20%;
   }
 }
 
 @keyframes alohomora {
   to {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    width: 20%;
   }
 }
 
